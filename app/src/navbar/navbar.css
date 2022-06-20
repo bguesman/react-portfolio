@@ -3,18 +3,18 @@
   font-style: italic;
   font-weight: 600;
   font-size: 40px;
-  line-height: 40px;
+  line-height: 42px;
   color: #111111;
   padding-top: 24px;
 }
 
 .subtitle {
   font-family: 'NanumGothic';
+  text-transform: uppercase;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   text-align: center;
   color: #111111;
-  text-transform: uppercase;
 }
