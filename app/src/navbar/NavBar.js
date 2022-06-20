@@ -5,7 +5,10 @@ import './navbar.css';
 class NavBar extends Component {
   render() {
     return (
+      <div>
       <div className='title'>Brad Guesman</div>
+      <div className='subtitle'>Creative<br/>Technologist</div>
+      </div>
     )
   }
 }
