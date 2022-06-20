@@ -1,3 +1,8 @@
+/* Make sure a default background color is set for all elements. */
+html, body {
+  background-color: #fff;
+}
+
 /* Hide the default cursor. */
 * {
   cursor: none;
