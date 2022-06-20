@@ -20,9 +20,9 @@ class App extends Component {
     return (
       // This tells us to call componentDidMount on this div? I don't fully understand it.
       <div className="App">
-        <div>test</div>
         <Cursor></Cursor>
-        <ThreeCanvas />
+        <div>test</div>
+        <ThreeCanvas/>
       </div>
     )
 
