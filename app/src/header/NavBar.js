@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom/client';
 import './navbar.css';
+import Menu from './Menu';
 
 class NavBar extends Component {
   render() {
@@ -8,9 +9,9 @@ class NavBar extends Component {
       <div className='navbar-container'>
           {/* Empty div for spacing */}
           <div className='nav-item'></div>
-          <div className='nav-item'>WORK</div>
-          <div className='nav-item'>MUSIC</div>
-          <div className='nav-item'>EXPERIMENTS</div>
+          <Menu text='WORK'></Menu>
+          <Menu text='MUSIC'></Menu>
+          <Menu text='EXPERIMENTS'></Menu>
       </div>
     )
   }

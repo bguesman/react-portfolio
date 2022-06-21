@@ -1,0 +1,16 @@
+.menu-container {
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-child {
+    flex: 1;
+}
+
+.arrow {
+	flex: none;
+  height: 8px;
+  width: 8px;
+	padding-left: 6px;
+}
