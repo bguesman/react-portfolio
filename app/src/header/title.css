@@ -24,3 +24,14 @@
   height: 35px;
   width: 35px;
 }
+
+.subtitle {
+  font-family: 'Nanum Gothic';
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #111111;
+}

@@ -2,7 +2,10 @@
   display: flex;
   justify-content: space-around;
   flex: 1;
+  /* This offsets the nav-bar from the right of the page. */
   padding-right: 50px;
+  /* This brings the nav-bar in line with the title. */
+  padding-top: 10px;
 }
 
 .nav-item {

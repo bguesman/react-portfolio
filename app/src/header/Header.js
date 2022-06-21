@@ -16,7 +16,6 @@ class Header extends Component {
           {/* <Contact/> */}
           <NavBar/>
         </div>
-        <div className='subtitle'>Creative<br/>Technologist</div>
       </div>
     )
   }

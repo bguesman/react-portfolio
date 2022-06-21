@@ -2,16 +2,6 @@
   display: flex;
   justify-content: space-between;
   padding-top: 24px;
-  align-items: center;
-}
-
-.subtitle {
-  font-family: 'Nanum Gothic';
-  text-transform: uppercase;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
-  color: #111111;
+  /* align-items: baseline; */
+  align-items: stretch;
 }
