@@ -1,11 +1,8 @@
-.title {
-  font-family: 'Tiro Tamil';
-  font-style: italic;
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 42px;
-  color: #111111;
+.header-container {
+  display: flex;
+  justify-content: space-between;
   padding-top: 24px;
+  align-items: center;
 }
 
 .subtitle {

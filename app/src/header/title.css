@@ -1,0 +1,26 @@
+.title-container {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.title-child {
+  flex: 1;
+}
+
+.title {
+  flex: none;
+  font-family: 'Tiro Tamil';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 42px;
+  color: #111111;
+  padding-left: 8px;
+}
+
+.planet {
+  flex: none;
+  height: 35px;
+  width: 35px;
+}

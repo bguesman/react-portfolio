@@ -11,7 +11,7 @@ import ThreeCanvas from "./three/react/ThreeCanvas";
 import Cursor from "./cursor/Cursor";
 
 // Actual site content
-import NavBar from "./navbar/NavBar"
+import Header from "./header/Header"
 
 // Three-js for fluid simulation.
 import * as THREE from "three";
@@ -24,7 +24,7 @@ class App extends Component {
       // This tells us to call componentDidMount on this div? I don't fully understand it.
       <div className="App">
         <Cursor/>
-        <NavBar/>
+        <Header/>
         <ThreeCanvas/>
       </div>
     )
