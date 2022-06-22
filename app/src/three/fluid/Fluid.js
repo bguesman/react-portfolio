@@ -15,6 +15,7 @@ import * as Logging from "../../logging/Logging"
 import RenderTarget from "./RenderTarget";
 
 import AddColorPass from "./passes/AddColorPass";
+import AddForcePass from "./passes/AddForcePass";
 import CompositePass from "./passes/CompositePass";
 
 
@@ -66,6 +67,7 @@ class ThreeFluid {
 
     // Shader passes
     this.addColorPass = new AddColorPass(this.resolution, this.config.radius);
+    this.addForcePass = new AddForcePass(this.resolution, this.config.radius);
     this.compositePass = new CompositePass();
 
     // Recording touches
@@ -73,13 +75,26 @@ class ThreeFluid {
   }
   
   render() {
-    this.addColorPass.setUniforms({
-      touches: this.inputTouches,
-      radius: this.config.radius,
-      color: this.c
-    });
-    this.c = this.colorRT.set(this.renderer);
-    this.renderer.render(this.addColorPass.scene, this.camera);
+    if (this.inputTouches.length > 0)
+    {
+      // Add forces to velocity for touches
+      this.addForcePass.setUniforms({
+        touches: this.inputTouches,
+        radius: this.config.Radius,
+        velocity: this.v
+      });
+      this.v = this.velocityRT.set(this.renderer);
+      this.renderer.render(this.addForcePass.scene, this.camera);
+
+      // Add color for touches
+      this.addColorPass.setUniforms({
+        touches: this.inputTouches,
+        radius: this.config.radius,
+        color: this.c
+      });
+      this.c = this.colorRT.set(this.renderer);
+      this.renderer.render(this.addColorPass.scene, this.camera);
+    }
 
     // Render final composited result.
     this.renderer.setRenderTarget(null);

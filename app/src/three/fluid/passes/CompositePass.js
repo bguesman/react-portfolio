@@ -58,9 +58,15 @@ class CompositePass {
       precision highp int;
       varying vec2 vUV;
       uniform sampler2D colorBuffer;
+
+      vec4 invert(vec4 color)
+      {
+        return clamp(1.0 - color, vec4(0, 0, 0, 1), vec4(1, 1, 1, 1));
+      }
+
       void main() {
         vec4 color = texture2D(colorBuffer, vUV);
-        gl_FragColor = color;
+        gl_FragColor = invert(color);
       }
     `);
   }
