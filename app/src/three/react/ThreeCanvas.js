@@ -18,7 +18,11 @@ class ThreeCanvas extends Component {
   render() {
     return (
       // This tells us to call componentDidMount on this div? I don't fully understand it.
-      <div className="canvas" id='three-canvas' ref={(mount) => { this.mount = mount }} />
+      <div 
+        className="canvas" 
+        id='three-canvas' 
+        ref={(mount) => { this.mount = mount }}
+      />
     )
   }
 
