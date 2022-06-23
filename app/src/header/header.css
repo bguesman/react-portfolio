@@ -4,4 +4,9 @@
   padding-top: 24px;
   /* align-items: baseline; */
   align-items: stretch;
+
+  /* no highlighting */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }

@@ -107,7 +107,7 @@ class AddForcePass {
       uniform sampler2D velocity;
 
       vec2 getForce(vec4 inputVec) {
-        float d = distance(vScaledUV, inputVec.xy) / (5.0 * radius);
+        float d = distance(vScaledUV, inputVec.xy) / (4.0 * radius);
         float strength = 1.0 / max(d * d, 0.01);
         strength *= (inputVec.x < 0.0) ? 0.0 : 1.0;
         return strength * inputVec.zw;

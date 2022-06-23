@@ -36,7 +36,7 @@ class CompositePass {
       fragmentShader: this.frag(),
       depthTest: false,
       depthWrite: false,
-      transparent: false
+      transparent: true
     });
   }
 
@@ -66,7 +66,9 @@ class CompositePass {
 
       void main() {
         vec4 color = texture2D(colorBuffer, vUV);
-        gl_FragColor = invert(color);
+        vec4 inverted = invert(color);
+        inverted.w = clamp(3.0 * (1.0 - vUV.y), 0.0, 1.0);
+        gl_FragColor = inverted;
       }
     `);
   }
