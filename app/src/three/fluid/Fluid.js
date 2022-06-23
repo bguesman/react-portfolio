@@ -16,6 +16,10 @@ import RenderTarget from "./RenderTarget";
 
 import AddColorPass from "./passes/AddColorPass";
 import AddForcePass from "./passes/AddForcePass";
+import DivergencePass from "./passes/DivergencePass";
+import JacobiPass from "./passes/JacobiPass";
+import GradientSubtractionPass from "./passes/GradientSubtractionPass";
+import AdvectionPass from "./passes/AdvectionPass";
 import CompositePass from "./passes/CompositePass";
 
 
@@ -30,7 +34,8 @@ class ThreeFluid {
       iterations: 32,
       scale: 0.5,
       radius: 0.01, // In uv space
-      dt: 1/60
+      dt: 1/60,
+      colorDecay: 0.01
     }
 
     this.setupScene(mount);
@@ -68,6 +73,11 @@ class ThreeFluid {
     // Shader passes
     this.addColorPass = new AddColorPass(this.resolution, this.config.radius);
     this.addForcePass = new AddForcePass(this.resolution, this.config.radius);
+    this.divergencePass = new DivergencePass();
+    this.pressurePass = new JacobiPass();
+    this.pressureSubtractionPass = new GradientSubtractionPass();
+    this.velocityAdvectionPass = new AdvectionPass(null, null, 0);
+    this.colorAdvectionPass = new AdvectionPass(null, null, this.config.colorDecay);
     this.compositePass = new CompositePass();
 
     // Recording touches
@@ -75,6 +85,11 @@ class ThreeFluid {
   }
   
   render() {
+    // Advect the velocity by itself
+    this.velocityAdvectionPass.setUniforms({ timeDelta: this.config.dt });
+    this.v = this.velocityRT.set(this.renderer);
+    this.renderer.render(this.velocityAdvectionPass.scene, this.camera);
+
     if (this.inputTouches.length > 0)
     {
       // Add forces to velocity for touches
@@ -95,6 +110,52 @@ class ThreeFluid {
       this.c = this.colorRT.set(this.renderer);
       this.renderer.render(this.addColorPass.scene, this.camera);
     }
+
+    // Advect the color according to velocity
+    this.colorAdvectionPass.setUniforms({
+      timeDelta: this.config.dt,
+      inputTexture: this.c,
+      velocity: this.v,
+      decay: this.config.colorDecay
+    });
+    this.c = this.colorRT.set(this.renderer);
+    this.renderer.render(this.colorAdvectionPass.scene, this.camera);
+
+    // Compute the divergence of the advected velocity vector field.
+    this.divergencePass.setUniforms({
+      timeDelta: this.config.dt,
+      velocity: this.v
+    });
+    this.d = this.divergenceRT.set(this.renderer);
+    this.renderer.render(this.divergencePass.scene, this.camera);
+
+    // Compute the pressure gradient of the advected velocity vector field (using
+    // jacobi iteration).
+    this.pressurePass.setUniforms({ divergence: this.d });
+    for (let i = 0; i < this.config.iterations; ++i) {
+      this.p = this.pressureRT.set(this.renderer);
+      this.renderer.render(this.pressurePass.scene, this.camera);
+      this.pressurePass.setUniforms({ previousIteration: this.p });
+    }
+
+    // Substract the pressure gradient from to obtain a velocity vector field with
+    // zero divergence.
+    this.pressureSubtractionPass.setUniforms({
+      timeDelta: this.config.dt,
+      velocity: this.v,
+      pressure: this.p
+    });
+    this.v = this.velocityRT.set(this.renderer);
+    this.renderer.render(this.pressureSubtractionPass.scene, this.camera);
+
+    // Feed the input of the advection passes with the last advected results.
+    this.velocityAdvectionPass.setUniforms({
+      inputTexture: this.v,
+      velocity: this.v
+    });
+    this.colorAdvectionPass.setUniforms({
+      inputTexture: this.c
+    });
 
     // Render final composited result.
     this.renderer.setRenderTarget(null);
