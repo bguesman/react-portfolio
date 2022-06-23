@@ -3,7 +3,7 @@ body {
 }
 .canvas { 
   width: 100vw; 
-  height: 100vh; 
+  height: 90vh; 
   display: block;
   overflow: hidden;
   padding-top: 20px;
@@ -24,10 +24,9 @@ body {
   line-height: 145px;
   text-align: center;
 
-  color: #FFFFFF;
+  color: #ffe0b6;
+  /* color: #ffffff; */
   mix-blend-mode: difference;
-
-  /* border: 1px solid #000000; */
 
   /* no highlighting */
   user-select: none;

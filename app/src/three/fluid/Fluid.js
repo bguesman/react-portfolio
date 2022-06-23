@@ -34,8 +34,8 @@ class ThreeFluid {
       iterations: 32,
       scale: 0.5,
       radius: 0.01, // In uv space
-      dt: 1/60,
-      colorDecay: 0.0025
+      dt: 1/120,
+      colorDecay: 0.001
     }
 
     this.setupScene(mount);
@@ -174,9 +174,7 @@ class ThreeFluid {
 
   registerListeners() {
     window.addEventListener('resize', this.onWindowResize.bind(this), false);
-    this.mount.addEventListener('mousedown', this.onMouseDown.bind(this), false);
     this.mount.addEventListener('mousemove', this.onMouseMove.bind(this), false);
-    this.mount.addEventListener('mouseup', this.onMouseUp.bind(this), false);
     this.mount.addEventListener('touchstart', this.onTouchStart.bind(this), false);
     this.mount.addEventListener('touchmove', this.onTouchMove.bind(this), false);
     this.mount.addEventListener('touchend', this.onTouchEnd.bind(this), false);
@@ -185,9 +183,7 @@ class ThreeFluid {
 
   deregisterListeners() {
     window.removeEventListener('resize', this.onWindowResize.bind(this), false);
-    this.mount.removeEventListener('mousedown', this.onMouseDown.bind(this), false);
     this.mount.removeEventListener('mousemove', this.onMouseMove.bind(this), false);
-    this.mount.removeEventListener('mouseup', this.onMouseUp.bind(this), false);
     this.mount.removeEventListener('touchstart', this.onTouchStart.bind(this), false);
     this.mount.removeEventListener('touchmove', this.onTouchMove.bind(this), false);
     this.mount.removeEventListener('touchend', this.onTouchEnd.bind(this), false);
@@ -206,21 +202,9 @@ class ThreeFluid {
     // this.renderer.render(this.scene, this.camera);
   }
 
-  onMouseDown(event) {
-    // if (event.button === 0) {
-    //   var rect = event.target.getBoundingClientRect();
-    //   const x = ((event.clientX - rect.left) / this.mount.clientWidth) * this.aspect.x;
-    //   const y = 1.0 - (event.clientY - rect.top) / this.mount.clientHeight;
-    //   this.inputTouches.push({
-    //     id: "mouse",
-    //     input: new Vector4(x, y, 0, 0)
-    //   });
-    // }
-  }
-  
   onMouseMove(event) {
-    if (this.inputTouches.length == 0) {
-      var rect = event.target.getBoundingClientRect();
+    var rect = event.target.getBoundingClientRect();
+    if (this.inputTouches.length < 1) {
       const x = ((event.clientX - rect.left) / this.mount.clientWidth) * this.aspect.x;
       const y = 1.0 - (event.clientY - rect.top) / this.mount.clientHeight;
       this.inputTouches.push({
@@ -229,21 +213,12 @@ class ThreeFluid {
       });
     }
 
-    if (this.inputTouches.length > 0) {
-      var rect = event.target.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / this.mount.clientWidth) * this.aspect.x;
-      const y = 1.0 - (event.clientY - rect.top) / this.mount.clientHeight;
-      this.inputTouches[0].input
-        .setZ(x - this.inputTouches[0].input.x)
-        .setW(y - this.inputTouches[0].input.y);
-        this.inputTouches[0].input.setX(x).setY(y);
-    }
-  }
-
-  onMouseUp(event) {
-    // if (event.button === 0) {
-    //   this.inputTouches.pop();
-    // }
+    const x = ((event.clientX - rect.left) / this.mount.clientWidth) * this.aspect.x;
+    const y = 1.0 - (event.clientY - rect.top) / this.mount.clientHeight;
+    this.inputTouches[0].input
+      .setZ(x - this.inputTouches[0].input.x)
+      .setW(y - this.inputTouches[0].input.y);
+    this.inputTouches[0].input.setX(x).setY(y);
   }
 
   onTouchStart(event) {

@@ -67,7 +67,7 @@ class CompositePass {
       void main() {
         vec4 color = texture2D(colorBuffer, vUV);
         vec4 inverted = invert(color);
-        inverted.w = clamp(3.0 * (1.0 - vUV.y), 0.0, 1.0);
+        inverted.w = clamp(5.0 * (1.0 - vUV.y), 0.0, 1.0);
         gl_FragColor = inverted;
       }
     `);
