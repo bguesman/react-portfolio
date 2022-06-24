@@ -37,8 +37,8 @@ class ThreeFluid {
       scale: 0.5,
       radius: 0.01, // In uv space
       dt: 1/60,
-      colorDecay: 0.001,
-      vorticity: 20
+      colorDecay: 0.005,
+      vorticity: 10
     }
 
     this.setupScene(mount);
