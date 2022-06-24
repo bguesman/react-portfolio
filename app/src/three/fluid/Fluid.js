@@ -91,6 +91,10 @@ class ThreeFluid {
   }
   
   render() {
+    var sz = new Vector2(0, 0)
+    this.renderer.getSize(sz)
+    Logging.log("renderer size: " + sz.x);
+
     // Advect the velocity by itself
     this.velocityAdvectionPass.setUniforms({ timeDelta: this.config.dt });
     this.v = this.velocityRT.set(this.renderer);
@@ -215,15 +219,24 @@ class ThreeFluid {
   }
 
   onWindowResize() {
-    // const width = this.mount.clientWidth;
-    // const height = this.mount.clientHeight;
-    // Logging.log('width: ' + width);
-    // Logging.log('height: ' + height);
-    // this.renderer.setSize(width, height, false);
-    // this.camera.aspect = width / height;
-    // this.camera.updateProjectionMatrix();
-    
-    // this.renderer.render(this.scene, this.camera);
+    const width = this.mount.clientWidth;
+    const height = this.mount.clientHeight;
+    // We NEED to pass true here---it updates the style of the canvas div,
+    // which is necessary for some reason. Maybe so that react re-renders?
+    // Or maybe because it's not mounted at the document body?
+    this.renderer.setSize(width, height, true);
+    this.camera.aspect = width / height;
+    this.camera.updateProjectionMatrix();
+
+    this.resolution = new Vector2(
+      this.config.scale * width,
+      this.config.scale * height
+    );
+    this.velocityRT.resize(this.resolution);
+    this.divergenceRT.resize(this.resolution);
+    this.curlRT.resize(this.resolution);
+    this.pressureRT.resize(this.resolution);
+    this.colorRT.resize(this.resolution);
   }
 
   onMouseMove(event) {
