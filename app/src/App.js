@@ -11,7 +11,8 @@ import ThreeCanvas from "./three/react/ThreeCanvas";
 import Cursor from "./cursor/Cursor";
 
 // Actual site content
-import Header from "./header/Header"
+import Header from "./header/Header";
+import FluidOverlay from "./fluid-overlay/FluidOverlay";
 
 // Three-js for fluid simulation.
 import * as THREE from "three";
@@ -25,6 +26,7 @@ class App extends Component {
       <div className="App">
         <Cursor/>
         <Header/>
+        <FluidOverlay/>
         <ThreeCanvas/>
       </div>
     )
