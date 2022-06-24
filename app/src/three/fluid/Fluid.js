@@ -19,6 +19,8 @@ import AddForcePass from "./passes/AddForcePass";
 import DivergencePass from "./passes/DivergencePass";
 import JacobiPass from "./passes/JacobiPass";
 import GradientSubtractionPass from "./passes/GradientSubtractionPass";
+import CurlPass from "./passes/CurlPass";
+import VorticityPass from "./passes/VorticityPass";
 import AdvectionPass from "./passes/AdvectionPass";
 import CompositePass from "./passes/CompositePass";
 
@@ -34,8 +36,9 @@ class ThreeFluid {
       iterations: 32,
       scale: 0.5,
       radius: 0.01, // In uv space
-      dt: 1/120,
-      colorDecay: 0.001
+      dt: 1/60,
+      colorDecay: 0.001,
+      vorticity: 20
     }
 
     this.setupScene(mount);
@@ -67,6 +70,7 @@ class ThreeFluid {
     // Render targets
     this.velocityRT = new RenderTarget(this.resolution, 2, RGBAFormat, HalfFloatType);
     this.divergenceRT = new RenderTarget(this.resolution, 1, RGBAFormat, HalfFloatType);
+    this.curlRT = new RenderTarget(this.resolution, 1, RGBAFormat, HalfFloatType);
     this.pressureRT = new RenderTarget(this.resolution, 2, RGBAFormat, HalfFloatType);
     this.colorRT = new RenderTarget(this.resolution, 2, RGBAFormat, UnsignedByteType);
 
@@ -76,6 +80,8 @@ class ThreeFluid {
     this.divergencePass = new DivergencePass();
     this.pressurePass = new JacobiPass();
     this.pressureSubtractionPass = new GradientSubtractionPass();
+    this.curlPass = new CurlPass();
+    this.vorticityPass = new VorticityPass();
     this.velocityAdvectionPass = new AdvectionPass(null, null, 0);
     this.colorAdvectionPass = new AdvectionPass(null, null, this.config.colorDecay);
     this.compositePass = new CompositePass();
@@ -147,6 +153,24 @@ class ThreeFluid {
     });
     this.v = this.velocityRT.set(this.renderer);
     this.renderer.render(this.pressureSubtractionPass.scene, this.camera);
+
+    // Compute the curl of the velocity field.
+    this.curlPass.setUniforms({
+      timeDelta: this.config.dt,
+      velocity: this.v
+    });
+    this.cu = this.curlRT.set(this.renderer);
+    this.renderer.render(this.curlPass.scene, this.camera);
+
+    // Use curl to compute vorticity confinement
+    this.vorticityPass.setUniforms({
+      timeDelta: this.config.dt,
+      velocity: this.v,
+      curl: this.cu,
+      vorticity: this.config.vorticity
+    });
+    this.v = this.velocityRT.set(this.renderer);
+    this.renderer.render(this.vorticityPass.scene, this.camera);
 
     // Feed the input of the advection passes with the last advected results.
     this.velocityAdvectionPass.setUniforms({

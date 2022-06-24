@@ -25,7 +25,6 @@ class ThreeCanvas extends Component {
         id='three-canvas' 
         ref={(mount) => { this.mount = mount }}
       >
-      
       </div>
       </div>
     )
