@@ -33,7 +33,8 @@ class ThreeFluid {
   constructor(mount) {
     // Config options
     this.config = {
-      iterations: 32,
+      simulate: false,
+      iterations: 16,
       scale: 0.5,
       radius: 0.01, // In uv space
       dt: 1/60,
@@ -90,11 +91,7 @@ class ThreeFluid {
     this.inputTouches = [];
   }
   
-  render() {
-    var sz = new Vector2(0, 0)
-    this.renderer.getSize(sz)
-    Logging.log("renderer size: " + sz.x);
-
+  simulate() {
     // Advect the velocity by itself
     this.velocityAdvectionPass.setUniforms({ timeDelta: this.config.dt });
     this.v = this.velocityRT.set(this.renderer);
@@ -184,6 +181,13 @@ class ThreeFluid {
     this.colorAdvectionPass.setUniforms({
       inputTexture: this.c
     });
+  }
+
+  render() {
+    // Simulate fluid movement
+    if (this.config.simulate) {
+      this.simulate();
+    }
 
     // Render final composited result.
     this.renderer.setRenderTarget(null);

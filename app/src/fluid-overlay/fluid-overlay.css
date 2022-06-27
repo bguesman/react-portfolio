@@ -1,27 +1,66 @@
 .fluid-overlay {
-    position: absolute;
-      top: 200px;
-      width: 100%;
-      text-align: center;
-      z-index: 100;
-      display:block;
-  
-    font-family: 'Cormorant Garamond';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 120px;
-    line-height: 145px;
-    text-align: center;
-  
-    color: #ffe0b6;
-    /* color: #ffffff; */
-    mix-blend-mode: difference;
-  
-    /* no highlighting */
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-  
-    /* Ignore mouse events so they get passed through to the three canvas. */
-    pointer-events: none;
-  }
+  position: absolute;
+  top: 17vh;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  display:block;
+
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14vh;
+  line-height: 16vh;
+  text-align: center;
+
+  color: #ffe0b6;
+  /* color: #ffffff; */
+  mix-blend-mode: difference;
+
+  /* no highlighting */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+
+  /* Ignore mouse events so they get passed through to the three canvas. */
+  pointer-events: none;
+}
+
+.explore-container {
+  position: absolute;
+  top: 85vh;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  display:block;
+
+  color: #ffe0b6;
+  /* color: #ffffff; */
+  mix-blend-mode: difference;
+
+  /* no highlighting */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+
+  /* Ignore mouse events so they get passed through to the three canvas. */
+  pointer-events: none;
+}
+
+.explore {
+  font-family: 'Amiri';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  /* line-height: 16vh; */
+  text-align: center;
+
+  transition: font-size 0.1s ease;
+
+  /* Put pointer events back on for this so that hover works. */
+  pointer-events: all;
+}
+
+.explore:hover {
+  font-size: 24px;
+}
