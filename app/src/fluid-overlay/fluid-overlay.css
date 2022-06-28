@@ -1,6 +1,6 @@
 .fluid-overlay {
   position: absolute;
-  top: 17vh;
+  top: 19vh;
   width: 100%;
   text-align: center;
   z-index: 100;
@@ -9,12 +9,11 @@
   font-family: 'Cormorant Garamond';
   font-style: normal;
   font-weight: 400;
-  font-size: 14vh;
+  font-size: 12vh;
   line-height: 16vh;
   text-align: center;
 
   color: #ffe0b6;
-  /* color: #ffffff; */
   mix-blend-mode: difference;
 
   /* no highlighting */

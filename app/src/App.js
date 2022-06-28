@@ -28,6 +28,7 @@ class App extends Component {
         <Header/>
         <FluidOverlay/>
         <ThreeCanvas/>
+        <div style={{height:"600px"}}></div>
       </div>
     )
 

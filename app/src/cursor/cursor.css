@@ -27,4 +27,7 @@ html, body {
   /* Fills in cursor and inverts colors */
   mix-blend-mode: difference;
   background: white;
+
+  /* Cursor always draws on top. */
+  z-index: 1000;
 }
