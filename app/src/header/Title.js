@@ -13,7 +13,7 @@ class Title extends Component {
           <img className='planet title-child' src={planet}/>
           <div className='title title-child'>Brad Guesman</div>
         </div>
-        <div className='subtitle'>Creative<br/>Technologist</div>
+        <div className='subtitle'>Creative Technologist</div>
       </div>
     )
   }
