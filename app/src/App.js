@@ -13,6 +13,7 @@ import Cursor from "./cursor/Cursor";
 // Actual site content
 import Header from "./header/Header";
 import FluidOverlay from "./fluid-overlay/FluidOverlay";
+import About from "./about/About";
 
 // Three-js for fluid simulation.
 import * as THREE from "three";
@@ -28,7 +29,7 @@ class App extends Component {
         <Header/>
         <FluidOverlay/>
         <ThreeCanvas/>
-        <div style={{height:"600px"}}></div>
+        <About/>
       </div>
     )
 

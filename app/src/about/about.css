@@ -1,0 +1,37 @@
+.about-container {
+  width: fill;
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: #fff;
+}
+
+.about-rolodex {
+  flex: 1;
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  margin-left: 10vw;
+  margin-right: 20vw;
+  text-align: left;
+
+  color: #111111;
+}
+
+.about-rolodex-highlight {
+  font-weight: 600;
+  transition: 1s;
+}
+
+.about-image-container {
+  flex: 1;
+}
+
+.about-image {
+  width: 80%;
+  padding-right: 30vw;
+}
