@@ -7,6 +7,35 @@ import * as Logging from '../logging/Logging';
 import Rolodex from "./Rolodex";
 
 class About extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false
+    }
+  }
+
+  componentDidMount() {
+    // This adds an event listener to slide in the rolodex from the left
+    // when it scrolls into view.
+    window.addEventListener('scroll', this.onScroll.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll.bind(this));
+  }
+
+  onScroll(event) {
+    const aboutY = document.getElementsByClassName("about-container")[0].getBoundingClientRect().top;
+    // Early out in case DOM call fails for some reason
+    if (!aboutY)
+      return;
+
+    this.setState({
+      visible: (window.scrollY > (aboutY + 50))
+    });
+  }
+
   render() {
     return (
       <div className="about-container">
@@ -23,6 +52,7 @@ class About extends Component {
             "don't suck.",
             "give perspective."
           ]}
+          translateStyle={"translate(" + (this.state.visible ? "0%" : "-120%") + ")"}
           interval={2}
         />
         <div className="about-image-container">

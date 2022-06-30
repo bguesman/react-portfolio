@@ -13,8 +13,7 @@ class Rolodex extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayIndex: 0,
-      visible: false
+      displayIndex: 0
     }
   }
 
@@ -26,33 +25,15 @@ class Rolodex extends Component {
         this.setState({ displayIndex: nextItem });
       },
     this.props.interval * 1000);
-
-    // This adds an event listener to slide in the rolodex from the left
-    // when it scrolls into view.
-    window.addEventListener('scroll', this.onScroll.bind(this));
   }
 
   componentWillUnmount() {
     clearInterval(this.interval);
   }
 
-  onScroll(event) {
-    const aboutY = document.getElementsByClassName("about-container")[0].getBoundingClientRect().top;
-    // Early out in case DOM call fails for some reason
-    if (!aboutY)
-      return;
-
-    this.setState({
-      visible: (window.scrollY > (aboutY + 50))
-    });
-  }
-
   render() {
     return (
-      <div 
-        className="about-rolodex"
-        style={{transform: "translate(" + (this.state.visible ? "0%" : "-120%") + ")"}}
-      >
+      <div className="about-rolodex" style={{transform: this.props.translateStyle}}>
         {this.props.prefix}
         <TextTransition
           className="about-rolodex-highlight" 

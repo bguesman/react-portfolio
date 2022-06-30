@@ -1,0 +1,43 @@
+.project-examples-container {
+
+}
+
+.project-example-container {
+  width: fill;
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: #111;
+}
+
+.project-example-header-container {
+  width: fill;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 72px;
+  padding-left: 72px;
+  padding-right: 72px;
+  
+  background-color: #111;
+}
+
+.project-example-header-item {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+
+  align-items: center;
+
+  transition: transform 1s ease;
+
+  color: #ffffff;
+}
+  

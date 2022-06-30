@@ -1,6 +1,7 @@
 .about-container {
   width: fill;
   height: 100vh;
+  overflow: hidden;
 
   display: flex;
   justify-content: space-around;
@@ -28,18 +29,13 @@
 
 .about-rolodex-highlight {
   font-weight: 600;
-  transition: 0.25s;
-  /* mix-blend-mode: difference;
-  color: #eeeeee; */
-  /* padding-bottom: 100px; */
-  align-items: top;
 }
 
 .about-image-container {
+  text-align: left;
   flex: 1;
 }
 
 .about-image {
   width: 80%;
-  padding-right: 30vw;
 }

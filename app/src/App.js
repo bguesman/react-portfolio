@@ -14,6 +14,7 @@ import Cursor from "./cursor/Cursor";
 import Header from "./header/Header";
 import FluidOverlay from "./fluid-overlay/FluidOverlay";
 import About from "./about/About";
+import ProjectExamples from "./project-examples/ProjectExamples";
 
 // Three-js for fluid simulation.
 import * as THREE from "three";
@@ -27,6 +28,7 @@ class App extends Component {
         <FluidOverlay/>
         <ThreeCanvas/>
         <About/>
+        <ProjectExamples/>
       </div>
     )
   }
