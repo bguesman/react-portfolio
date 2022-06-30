@@ -13,7 +13,17 @@ class About extends Component {
         
         <Rolodex 
           prefix={"Hi, I'm Brad, and I like to make things that "} 
-          items={["hi.", "hello.", "cummer."]}
+          items={[
+            "feel right.", 
+            "sound good.",
+            "work well.",
+            "inspire people.", 
+            "look great.",
+            "are fun to use.",
+            "connect people.",
+            "don't suck.",
+            "give perspective."
+          ]}
           interval={2}
         />
 

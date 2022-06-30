@@ -10,6 +10,7 @@
 }
 
 .about-rolodex {
+  transform: translate(-120%);
   flex: 1;
   font-family: 'Cormorant Garamond';
   font-style: normal;
@@ -20,11 +21,18 @@
   text-align: left;
 
   color: #111111;
+
+  /* Transform-translate should slide in slowly */
+  transition: transform 1.25s ease;
 }
 
 .about-rolodex-highlight {
   font-weight: 600;
-  transition: 1s;
+  transition: 0.25s;
+  /* mix-blend-mode: difference;
+  color: #eeeeee; */
+  /* padding-bottom: 100px; */
+  align-items: top;
 }
 
 .about-image-container {

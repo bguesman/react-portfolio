@@ -184,8 +184,10 @@ class ThreeFluid {
   }
 
   render() {
+    const vis = window.scrollY < this.mount.clientHeight;
+    const shouldSimulate = this.config.simulate && vis;
     // Simulate fluid movement
-    if (this.config.simulate) {
+    if (shouldSimulate) {
       this.simulate();
     }
 

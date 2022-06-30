@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import ReactDOM from 'react-dom/client';
 
 import logo from './logo.svg';
@@ -19,7 +19,6 @@ import About from "./about/About";
 import * as THREE from "three";
 
 class App extends Component {
-
   render() {
     // Three js integration
     return (
