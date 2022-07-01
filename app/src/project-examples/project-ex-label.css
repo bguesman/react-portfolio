@@ -1,0 +1,45 @@
+.project-label-container {
+  color: #FFFFFF;
+}
+
+.project-title-container {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.project-example-title {
+  font-family: 'Amiri';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 150px;
+  line-height: 130px;
+  padding-left: 30px;
+}
+
+.project-example-planet {
+  flex: none;
+  height: 105px;
+  width: 105px;
+  padding-bottom: 22px;
+}
+
+.project-example-subtitle {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 80px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.project-example-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: left;
+  padding-left: 20px;
+}

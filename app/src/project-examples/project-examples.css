@@ -1,16 +1,5 @@
 .project-examples-container {
-
-}
-
-.project-example-container {
   width: fill;
-  height: 100vh;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  background-color: #111;
 }
 
 .project-example-header-container {
@@ -40,4 +29,18 @@
 
   color: #ffffff;
 }
-  
+
+.project-example-container {
+  width: fill;
+  height: 90vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #111;
+}
+
+.project-image-container {
+  /* flex: 1; */
+}
