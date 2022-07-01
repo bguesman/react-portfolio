@@ -37,17 +37,17 @@ class ProjectEx extends Component {
       return (
         <div className="project-example-container" style={{backgroundColor: backgroundColor}}>
           {this.renderLabel()}
-          {/* <div className="project-image-container">
+          <div className="project-image-container">
             <img src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"/>
-          </div> */}
+          </div>
         </div>
       );
     } else {
       return (
         <div className="project-example-container" style={{backgroundColor: backgroundColor}}>
-          {/* <div className="project-image-container">
+          <div className="project-image-container">
             <img src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"/>
-          </div> */}
+          </div>
           {this.renderLabel()}
         </div>
       );
