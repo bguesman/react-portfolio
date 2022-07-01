@@ -1,11 +1,12 @@
 .project-label-container {
   color: #FFFFFF;
+  text-align: left;
 }
 
 .project-title-container {
   display: flex;
   align-items: center;
-  text-align: left;
+  justify-content: flex-start;
 }
 
 .project-example-title {
@@ -30,7 +31,6 @@
   font-weight: 300;
   font-size: 40px;
   line-height: 80px;
-  text-align: left;
   padding-left: 20px;
 }
 
@@ -40,6 +40,5 @@
   font-weight: 100;
   font-size: 30px;
   line-height: 35px;
-  text-align: left;
   padding-left: 20px;
 }

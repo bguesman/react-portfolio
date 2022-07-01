@@ -34,13 +34,23 @@
   width: fill;
   height: 90vh;
 
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 
   background-color: #111;
 }
 
 .project-image-container {
   /* flex: 1; */
+}
+
+.align-to-bottom-container {
+  position: relative;
+  height: 100%;
+}
+
+.align-to-bottom {
+  position: absolute;
+  bottom: 50px;
 }

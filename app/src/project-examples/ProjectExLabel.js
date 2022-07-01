@@ -13,9 +13,12 @@ class ProjectExLabel extends Component {
 
   render() {
     var rightColorPlanet = this.props.planetBlack ? planet : planet_white;
+    const justifyContent = this.props.alignLeft ? "flex-start" : "flex-end";
+    const textAlign = this.props.alignLeft ? "left" : "right";
+
     return (
-      <div className="project-label-container" style={{color: this.props.color}}>
-        <div className="project-title-container">
+      <div className="project-label-container" style={{color: this.props.color, textAlign: textAlign}}>
+        <div className="project-title-container" style={{justifyContent: justifyContent}}>
           <img className='project-example-planet' src={rightColorPlanet}/>
           <div className="project-example-title">{this.props.title}</div>
         </div>
