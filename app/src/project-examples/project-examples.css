@@ -45,6 +45,18 @@
   /* flex: 1; */
 }
 
+.project-example-image {
+  max-width: 70%;
+  height: auto;
+  padding: 40px;
+
+  transition: max-width 0.2s ease;
+}
+
+.project-example-image:hover {
+  max-width: 73%;
+}
+
 .align-to-bottom-container {
   height: 100%;
   display: flex;

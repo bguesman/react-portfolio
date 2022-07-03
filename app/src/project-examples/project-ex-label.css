@@ -1,6 +1,8 @@
 .project-label-container {
   color: #FFFFFF;
   text-align: left;
+
+  transition: transform 1.5s;
 }
 
 .project-title-container {
