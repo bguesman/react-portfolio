@@ -1,10 +1,10 @@
 .project-examples-container {
   width: fill;
+  overflow: hidden;
 }
 
 .project-example-header-container {
   width: fill;
-  overflow: hidden;
 
   display: flex;
   justify-content: space-between;

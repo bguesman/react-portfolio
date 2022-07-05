@@ -33,7 +33,7 @@ class ProjectEx extends Component {
 
     const thisY = this.ref.current.getBoundingClientRect().top;
     this.setState({
-      visible: (window.scrollY > (thisY + 50))
+      visible: thisY < (window.innerHeight * 0.5)
     });
   }
 

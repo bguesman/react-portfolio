@@ -20,19 +20,19 @@ class ProjectExLabel extends Component {
         this.props.visible 
         ? "0%)" 
         : (this.props.alignLeft
-          ? "-300%)"
-          : "300%)"
+          ? "-100%)"
+          : "100%)"
         )
       );
 
     return (
-      <div className="project-label-container" style={{color: this.props.color, textAlign: textAlign, transform:translate}}>
-        <div className="project-title-container" style={{justifyContent: justifyContent}}>
+      <div className="project-label-container" style={{color: this.props.color, textAlign: textAlign}}>
+        <div className="project-title-container" style={{justifyContent: justifyContent, transform:translate}}>
           <img className='project-example-planet' src={rightColorPlanet}/>
           <div className="project-example-title">{this.props.title}</div>
         </div>
-        <div className="project-example-subtitle">{this.props.subtitle}</div>
-        <div className="project-example-text">{this.props.description}</div>
+        <div className="project-example-subtitle" style={{transform:translate}}>{this.props.subtitle}</div>
+        <div className="project-example-text" style={{transform:translate}}>{this.props.description}</div>
       </div>
     );
   }

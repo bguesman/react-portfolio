@@ -1,14 +1,14 @@
 .project-label-container {
   color: #FFFFFF;
   text-align: left;
-
-  transition: transform 1.5s;
 }
 
 .project-title-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  transition: transform 1s;
 }
 
 .project-example-title {
@@ -34,6 +34,8 @@
   font-size: 40px;
   line-height: 80px;
   padding-left: 20px;
+
+  transition: transform 1.05s;
 }
 
 .project-example-text {
@@ -43,4 +45,6 @@
   font-size: 30px;
   line-height: 35px;
   padding-left: 20px;
+
+  transition: transform 1.1s;
 }
