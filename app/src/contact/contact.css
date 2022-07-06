@@ -17,10 +17,8 @@
 }
 
 .center-text {
-  /* max-width: 80%; */
-  /* position: absolute; */
+  overflow: hidden;
 
-  /* font-family: 'Roboto'; */
   font-family: 'Amiri';
   font-style: normal;
   font-weight: 800;
@@ -31,13 +29,14 @@
   color: #111111;
   text-shadow: 0 0 64px #ffffff, 0 0 64px #ffffff;
 
-  /* color: #ffe0b6;
-  mix-blend-mode: difference;
-  text-shadow: 0 0 64px #000000, 0 0 64px #000000; */
-
   z-index: 100;
 
   transition: font-size 0.1s;
+}
+
+.center-text-float-up {
+  transform: translateY(100%);
+  transition: transform 1s;
 }
 
 .center-text:hover {
@@ -49,13 +48,15 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 200;
-  font-size: 48px;
+  font-size: 40px;
   text-align: center;
   vertical-align: text-top;
 
   color: #333333;
 
   padding: 30px;
+
+  transition: opacity 2s;
 }
 
 .boldable-text {
