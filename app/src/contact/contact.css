@@ -1,14 +1,19 @@
 .contact-container {
   width: fill;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
   background-color: #fff;
+
+  /* No highlighting. */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .center-text-container {
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
 
   display: flex;
@@ -41,6 +46,29 @@
 
 .center-text:hover {
   font-size: 170px;
+}
+
+.wrapped-text-overlay {
+  background-image: linear-gradient( top, 
+            rgba( 255, 255, 255, 0 ) 90%, 
+            rgba( 255, 255, 255, 1 ) 100% );
+  background-image: -moz-linear-gradient( top, 
+      rgba( 255, 255, 255, 0 ) 90%, 
+      rgba( 255, 255, 255, 1 ) 100% );
+  background-image: -ms-linear-gradient( top, 
+      rgba( 255, 255, 255, 0 ) 90%, 
+      rgba( 255, 255, 255, 1 ) 100% );
+  background-image: -o-linear-gradient( top, 
+      rgba( 255, 255, 255, 0 ) 90%, 
+      rgba( 255, 255, 255, 1 ) 100% );
+  background-image: -webkit-linear-gradient( top, 
+      rgba( 255, 255, 255, 0 ) 90%, 
+      rgba( 255, 255, 255, 1 ) 100% );
+  content: "\00a0";
+  height: 90vh;
+  position: absolute;
+  width: fill;
+  z-index: 50;
 }
 
 .wrapped-text {

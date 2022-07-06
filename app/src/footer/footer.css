@@ -1,0 +1,27 @@
+.footer-container {
+  width: fill;
+  overflow: hidden;
+  
+  background-color: #fff;
+
+  padding-top: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-item {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  text-align: center;
+  color: #111;
+}

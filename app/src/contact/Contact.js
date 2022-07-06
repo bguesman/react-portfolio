@@ -150,6 +150,7 @@ class Contact extends Component {
             <div className="center-text-float-up" style={{transform: translate}}>brad.guesman<wbr/>@gmail.com</div>
           </div>
         </div>
+        <div className="wrapped-text-overlay"></div>
         <div className="wrapped-text" style={{opacity: opacity}}>{this.state.composed}</div>
       </div>
     );

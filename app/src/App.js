@@ -16,6 +16,7 @@ import FluidOverlay from "./fluid-overlay/FluidOverlay";
 import About from "./about/About";
 import ProjectExamples from "./project-examples/ProjectExamples";
 import Contact from "./contact/Contact";
+import Footer from "./footer/Footer";
 
 // Three-js for fluid simulation.
 import * as THREE from "three";
@@ -31,6 +32,7 @@ class App extends Component {
         <About/>
         <ProjectExamples/>
         <Contact/>
+        <Footer/>
       </div>
     )
   }

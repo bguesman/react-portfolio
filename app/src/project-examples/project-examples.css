@@ -1,6 +1,11 @@
 .project-examples-container {
   width: fill;
   overflow: hidden;
+
+  /* No highlighting. */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .project-example-header-container {
