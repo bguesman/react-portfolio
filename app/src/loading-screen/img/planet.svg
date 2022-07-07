@@ -1,0 +1,23 @@
+<!-- <svg
+  id="egnV2R9dHso1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 33 33"
+  shape-rendering="geometricPrecision"
+  text-rendering="geometricPrecision"
+><style
+  ><![CDATA[#egnV2R9dHso2_tr {animation: egnV2R9dHso2_tr__tr 3000ms linear infinite normal forwards}@keyframes egnV2R9dHso2_tr__tr { 0% {transform: translate(16.5px,16.499998px) rotate(0deg);animation-timing-function: cubic-bezier(0.84,0.01,1,1)} 23.333333% {transform: translate(16.5px,16.499998px) rotate(90deg)} 50% {transform: translate(16.5px,16.499998px) rotate(90deg);animation-timing-function: cubic-bezier(0.25,1,0.25,1)} 83.333333% {transform: translate(16.5px,16.499998px) rotate(180deg)} 100% {transform: translate(16.5px,16.499998px) rotate(180deg)}} #egnV2R9dHso2 {animation: egnV2R9dHso2_s_do 3000ms linear infinite normal forwards}@keyframes egnV2R9dHso2_s_do { 0% {stroke-dashoffset: 360;animation-timing-function: cubic-bezier(0.84,0.01,1,1)} 23.333333% {stroke-dashoffset: 0;animation-timing-function: cubic-bezier(0.25,1,0.25,1)} 50% {stroke-dashoffset: 0;animation-timing-function: cubic-bezier(0.25,1,0.25,1)} 83.333333% {stroke-dashoffset: 360} 100% {stroke-dashoffset: 360}} #egnV2R9dHso3 {animation: egnV2R9dHso3__m 3000ms linear infinite normal forwards}@keyframes egnV2R9dHso3__m { 0% {d: path('M1,32L1,32')} 10% {d: path('M1,32L1,32');animation-timing-function: cubic-bezier(0.42,0,0.58,1)} 20% {d: path('M1,32L32.047831,0.990145')} 50% {d: path('M1,32L32.047831,0.990145');animation-timing-function: cubic-bezier(0.25,1,0.25,1)} 90% {d: path('M1,32L1,32')} 100% {d: path('M1,32L1,32')}} #egnV2R9dHso4_ts {animation: egnV2R9dHso4_ts__ts 3000ms linear infinite normal forwards}@keyframes egnV2R9dHso4_ts__ts { 0% {transform: translate(12.6251px,11.2159px) scale(0,0);animation-timing-function: cubic-bezier(0.42,0,0.58,1)} 20% {transform: translate(12.6251px,11.2159px) scale(1.15,1.15);animation-timing-function: cubic-bezier(0,0,0.58,1)} 26.666667% {transform: translate(12.6251px,11.2159px) scale(1,1)} 60% {transform: translate(12.6251px,11.2159px) scale(1,1);animation-timing-function: cubic-bezier(0,0,0.29,1.05)} 90% {transform: translate(12.6251px,11.2159px) scale(0,0)} 100% {transform: translate(12.6251px,11.2159px) scale(0,0)}}]]></style><g
+    id="egnV2R9dHso2_tr"
+    transform="translate(16.5,16.499998) rotate(0)"
+  ><circle
+      id="egnV2R9dHso2"
+      r="14.1477"
+      transform="translate(0,0.000002)"
+      fill="none"
+      stroke="#111"
+      stroke-dashoffset="360"
+      stroke-dasharray="360"
+    /></g><path id="egnV2R9dHso3" d="M1,32v0" fill="none" stroke="#111" /><g
+    id="egnV2R9dHso4_ts"
+    transform="translate(12.6251,11.2159) scale(0,0)"
+  ><circle r="2.46591" transform="translate(0,0)" fill="#111" /></g></svg> -->

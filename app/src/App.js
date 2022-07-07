@@ -11,6 +11,7 @@ import ThreeCanvas from "./three/react/ThreeCanvas";
 import Cursor from "./cursor/Cursor";
 
 // Actual site content
+import LoadingScreen from "./loading-screen/LoadingScreen";
 import Header from "./header/Header";
 import FluidOverlay from "./fluid-overlay/FluidOverlay";
 import About from "./about/About";
@@ -26,6 +27,7 @@ class App extends Component {
     return (
       <div className="App">
         <Cursor/>
+        <LoadingScreen/>
         <Header/>
         <FluidOverlay/>
         <ThreeCanvas/>

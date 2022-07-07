@@ -20,7 +20,7 @@ class Contact extends Component {
 
     this.introPhrase = "Send me a message, and maybe we’ll end up talking about ";
     this.separator = ", or ";
-    this.boldPhrases = 4;
+    this.boldPhrases = 5;
     this.phrases = [
       "skate-boarding on San Francisco roads",
       "understanding hemispheric differences in the brain",
@@ -31,9 +31,11 @@ class Contact extends Component {
       "your favorite cartoon growing up",
       "the Hario v60 pourover brewer",
       "simulating multiple scattering in cumulus clouds",
+      "why there are no Halal trucks in the Bay Area (seriously, why?)",
       "differential geometry",
       "writing lyrics that don’t suck",
       "how retrofuturism is getting old",
+      "the widespread assumption of causal reductionism",
       "what book you just read",
       "the epistemics of studying the mind",
       "how to make consistently good stovetop rice (advice needed)",
@@ -43,15 +45,16 @@ class Contact extends Component {
       "phaser pedals from the 1970’s",
       "mx key switches",
       "trying to write guitar parts that don’t sound like the strokes",
+      "John Bonham's kick drum roll",
       "interactive storytelling in digital experiences",
       "Olga Ravn",
       "how terrible live-action cowboy bebop was",
       "your favorite plant-based meat",
+      "star gazing far away from a city",
       "solarpunk",
       "Trent Reznor's film scores",
       "biomimicry",
       "AI terrain generation",
-      "John Bonham's kick drum roll",
       "making human-computer interfaces more... human?",
       "how to help artists and engineers understand each other",
       "repurposing Rao's sauce jars as cups (they're really big)",
@@ -67,11 +70,8 @@ class Contact extends Component {
       "working to understand people who are different than you",
       "over-using tritone substitutions",
       "standing desks",
-      "why there are no Halal trucks in the Bay Area (seriously, why?)",
-      "the widespread assumption of causal reductionism",
       "clamming and quahogging",
       "ray tracing black holes",
-      "star gazing far away from a city",
       "The Boss CE-2 chorus",
       "misjudging the relevant domain of the scientific method",
       "materialism",
