@@ -1,0 +1,8 @@
+.modal-container {
+    transition: opacity 1s;
+    width: fill;
+    height: 100vh;
+    position: absolute;
+    z-index: 99999;
+    background-color: #fff;
+}

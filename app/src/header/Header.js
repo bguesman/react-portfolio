@@ -55,8 +55,11 @@ class Header extends Component {
         >
           <Contact/>
           <Title/>
-          {/* <Contact/> */}
-          <NavBar/>
+          <NavBar 
+            modalRegistry={this.props.modalRegistry}
+            setModal={this.props.setModal}
+            closeModal={this.props.closeModal}
+          />
         </div>
       </div>
     )
