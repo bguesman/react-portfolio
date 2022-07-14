@@ -4,7 +4,7 @@
 
 <div id="modal-scroll-point"/>
 
-## Realtime, expressive, physically-based procedural skies
+<div id="modal-subtitle-container"><h2 id="modal-subtitle">Realtime, expressive, physically-based procedural skies</h2></div>
 
 Ever since working on Virtual Sky and playing through the stunningly beautiful Zelda: Breath of the Wild, I've had a deepened appreciation for digital emulations of the Earth's atmosphere. Skies aren't just pretty—they're emotional. We have such strong associations with sunsets, sunrises, clear blue mornings and stormy evenings. To communicate those primal feelings in the digital medium is no small task.
 

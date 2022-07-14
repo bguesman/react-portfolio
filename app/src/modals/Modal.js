@@ -31,6 +31,10 @@ class Modal extends Component {
     setTimeout(() => {
       document.getElementById('modal-scroll-point').scrollIntoView( { behavior: "smooth", block: "start" } );
     }, 2000);
+
+    setTimeout(() => {
+      document.getElementById('modal-subtitle').style.transform = "translateY(0%)";
+    }, 2200);
   }
 
   render() {

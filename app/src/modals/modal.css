@@ -1,11 +1,15 @@
 .modal-container {
   transition: opacity 0.5s;
+
+  height: 100vh;
   width: fill;
-  position: sticky;
+	position: fixed;
   top: 0;
+	left: 0;
 
   z-index: 99999;
   background-color: #fff;
+  overflow-y: scroll;
 }
 
 .modal-close {
@@ -56,4 +60,13 @@
   font-weight: 300;
   font-size: 28px;
   color: #111;
+}
+
+#modal-subtitle-container {
+  overflow: hidden;
+}
+
+#modal-subtitle {
+  transform: translateY(120%);
+  transition: transform 1s;
 }

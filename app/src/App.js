@@ -36,46 +36,38 @@ class App extends Component {
       modalRegistry: new ModalRegistry(),
       selectedModal: 0,
       renderModal: false,
-      displayModal: false,
-      modalLoaded: false,
-      prevScroll: 0
+      displayModal: false
     }
   }
 
   setModal(name) {
+    // Select modal, indicate that we should render it in the DOM.
     const index = this.state.modalRegistry.modals.findIndex((modal) => modal.name === name);
     this.setState({
       selectedModal: index !== null ? index : 0,
-      renderModal: index !== null ? true : false
+      renderModal: index !== null ? true : false,
     });
 
+    // After a short amount of time, indicate that we should change the opacity to 1.
     setTimeout(() => {
       this.setState({
         displayModal: true
       });
-    }, 0);
-
-    setTimeout(() => {
-      this.setState({
-        modalLoaded: true,
-        prevScroll: window.scrollY
-      });
-      window.scrollTo(0, 0);
-    }, 500);
+    }, 10);
   }
 
   closeModal() {
+    // Transition modal to zero opacity.
     this.setState({
-      displayModal: false,
-      modalLoaded: false
+      displayModal: false
     });
-    window.scrollTo(0, this.state.prevScroll);
 
+    // Stop rendering the modal when it is at zero opacity.
     setTimeout(() => {
       this.setState({
         renderModal: false
       });
-    }, 500);
+    }, 1000);
   }
 
   renderModal() {
@@ -87,33 +79,25 @@ class App extends Component {
           markdownPath={this.state.modalRegistry.modals[this.state.selectedModal].markdownPath}
         />
       );
-    } else {
-      // No-op
-      return;
     }
   }
 
   renderMainPage() {
-    if (this.state.modalLoaded) {
-      // No-op
-      return;
-    } else {
-      return (
-        <div>
-          <Header 
-            modalRegistry={this.state.modalRegistry}
-            setModal={this.setModal.bind(this)}
-            closeModal={this.closeModal.bind(this)}
-          />
-          <FluidOverlay/>
-          <ThreeCanvas/>
-          <About/>
-          <ProjectExamples/>
-          <Contact/>
-          <Footer/>
-        </div>
-      );
-    }
+    return (
+      <div style={{overflow: "visible"}}>
+        <Header
+          modalRegistry={this.state.modalRegistry}
+          setModal={this.setModal.bind(this)}
+          closeModal={this.closeModal.bind(this)}
+        />
+        <FluidOverlay/>
+        <ThreeCanvas/>
+        <About/>
+        <ProjectExamples/>
+        <Contact/>
+        <Footer/>
+      </div>
+    );
   }
 
   render() {
