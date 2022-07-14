@@ -24,6 +24,9 @@ class ProjectExamplesHeader extends Component {
   }
 
   onScroll(event) {
+    if (document.getElementsByClassName("project-examples-container").length == 0)
+      return;
+
     const projectExamplesY = document.getElementsByClassName("project-examples-container")[0].getBoundingClientRect().top;
     // Early out in case DOM call fails for some reason
     if (!projectExamplesY)

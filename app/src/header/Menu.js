@@ -25,7 +25,7 @@ class Menu extends Component {
       <div className="dropdown-container">
         {this.props.modals.map((modal, i) => { 
           return (<div className="menu-item" key={i}>
-            <span className='underline-on-hover' onClick={() => this.props.setModal(modal.metadata.name)}>{modal.metadata.name}</span>
+            <span className='underline-on-hover' onClick={() => this.props.setModal(modal.name)}>{modal.name}</span>
           </div>)
         })}
       </div>

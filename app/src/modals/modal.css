@@ -1,8 +1,59 @@
 .modal-container {
-    transition: opacity 1s;
-    width: fill;
-    height: 100vh;
-    position: absolute;
-    z-index: 99999;
-    background-color: #fff;
+  transition: opacity 0.5s;
+  width: fill;
+  position: sticky;
+  top: 0;
+
+  z-index: 99999;
+  background-color: #fff;
+}
+
+.modal-close {
+  width: 30px;
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  transition: transform 0.5s ease;
+}
+
+.modal-close:hover {
+  transform: rotate(180deg) scale(1.1);
+}
+
+.modal-text {
+  padding-left: 20vw;
+  padding-right: 20vw;
+  text-align: left;
+}
+
+.modal-text img {
+  max-width: 100%;
+}
+
+.modal-container h1 {
+  font-family: 'Amiri';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 150px;
+  line-height: 30px;
+  padding-top: 120px;
+  padding-bottom: 100px;
+  margin: 0;
+  color: #111;
+}
+
+.modal-text h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  color: #111;
+}
+
+.modal-text p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 28px;
+  color: #111;
 }

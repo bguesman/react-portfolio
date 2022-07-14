@@ -26,6 +26,9 @@ class About extends Component {
   }
 
   onScroll(event) {
+    if (document.getElementsByClassName("about-container").length == 0)
+      return;
+      
     const aboutY = document.getElementsByClassName("about-container")[0].getBoundingClientRect().top;
     // Early out in case DOM call fails for some reason
     if (!aboutY)
