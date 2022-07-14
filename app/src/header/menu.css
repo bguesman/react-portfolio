@@ -2,28 +2,54 @@
 	display: flex;
   justify-content: space-between;
   align-items: baseline;
+  
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .menu-child {
     flex: 1;
 }
 
+.arrow-container {
+	padding-left: 6px;
+}
+
 .arrow {
 	flex: none;
   height: 8px;
   width: 8px;
-	padding-left: 6px;
+
+  transition: transform 0.5s;
 }
 
 .dropdown-container {
-  /* display: flex; */
+  overflow: hidden;
   position: absolute;
-  /* flex-direction: column; */
+  padding-right: 32px;
+  padding-bottom: 32px;
+  padding-left: 16px;
+}
+
+.dropdown {
   background-color: #ffffff;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  /* padding: 12px 16px; */
+  max-width: 190px;
+  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2);
   z-index: 9999;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 30px;
+
+  transform: translateY(-130%);
+  transition: transform 0.5s;
+
+  /* Do these actually look good? */
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
 }
 
 .menu-item {
@@ -34,6 +60,12 @@
   line-height: 18px;
   color: #111111;
   text-align: left;
-  padding: 10px;
-  border: 1px solid #111111;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.menu-item:hover > .underline-on-hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

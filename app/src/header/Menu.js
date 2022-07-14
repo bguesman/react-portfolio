@@ -10,7 +10,8 @@ class Menu extends Component {
     super(props);
 
     this.state = {
-      dropdown: false
+      dropdown: false,
+      hover: false
     }
   }
 
@@ -23,11 +24,13 @@ class Menu extends Component {
   renderDropdown() {
     return (
       <div className="dropdown-container">
-        {this.props.modals.map((modal, i) => { 
-          return (<div className="menu-item" key={i}>
-            <span className='underline-on-hover' onClick={() => this.props.setModal(modal.name)}>{modal.name}</span>
-          </div>)
-        })}
+        <div className="dropdown" style={{transform: this.state.dropdown ? "translateY(0%)" : "translateY(-130%)"}}>
+          {this.props.modals.map((modal, i) => { 
+            return (<div className='menu-item' key={i} onClick={() => this.props.setModal(modal.name)}>
+              <span className='underline-on-hover'>{modal.name}</span>
+            </div>)
+          })}
+        </div>
       </div>
     );
   }
@@ -35,13 +38,28 @@ class Menu extends Component {
   render() {
     return (
       <div>
-        <div className='menu-container'>
+        <div
+          className='menu-container' 
+          onClick={this.setDropdownState.bind(this)}
+          onMouseEnter={() => this.setState({hover: true})}
+          onMouseLeave={() => this.setState({hover: false})}
+        >
             <div className='nav-item'>
-              <span className='underline-on-hover' onClick={this.setDropdownState.bind(this)}>{this.props.text}</span>
+              <span>
+                {this.props.text}
+                <div className='animated-underline' style={{transform: this.state.hover ? "scaleX(1)" : "scaleX(0)", transformOrigin: this.state.hover ? 'bottom left' : 'bottom right'}}/>
+              </span>
             </div>
-            <img className='arrow menu-child' src={arrow}></img>
+            <div className='arrow-container menu-child'>
+              <img 
+                className='arrow'
+                src={arrow}
+                style={{transform: this.state.dropdown ? "rotate(180deg)" : "rotate(0deg)"}}
+              />
+            </div>
         </div>
-        {(this.state.dropdown) ? this.renderDropdown() : null}
+        {/* {(this.state.dropdown) ? this.renderDropdown() : null} */}
+        {this.renderDropdown()}
       </div>
     )
   }

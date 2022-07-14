@@ -16,7 +16,7 @@ html, body {
   overflow:hidden;
 
   /* Makes the cursor a circle */
-  border-radius:50%;
+  border-radius: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
 
