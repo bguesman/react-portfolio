@@ -11,13 +11,15 @@ class ProjectExamples extends Component {
   render() {
     return (
       <div className="project-examples-container">
-        <ProjectExamplesHeader />
+        <ProjectExamplesHeader/>
         <ProjectEx
           colorScheme={"dark"}
           orientation={"left"}
           title={"Expanse"}
           subtitle={"CREATOR"}
           description={"Reimagining what a procedural sky system can do, and how it does it."}
+          openModal={() => this.props.setModal("Expanse")}
+          setCursorDisplay={this.props.setCursorDisplay}
         />
         <ProjectEx
           colorScheme={"light"}
@@ -25,6 +27,8 @@ class ProjectExamples extends Component {
           title={"Drivesim"}
           subtitle={"DEVELOPER"}
           description={"A virtual playground for autonomous agents, built in NVIDIA Omniverse."}
+          openModal={() => this.props.setModal("DRIVE Sim")}
+          setCursorDisplay={this.props.setCursorDisplay}
         />
         <ProjectEx
           colorScheme={"dark"}
@@ -32,6 +36,8 @@ class ProjectExamples extends Component {
           title={"Modern Warfare"}
           subtitle={"AUDIO INTERACTION DESIGNER"}
           description={"Building user-centered, immersive sound propagation systems."}
+          openModal={() => this.props.setModal("Modern Warfare")}
+          setCursorDisplay={this.props.setCursorDisplay}
         />
       </div>
     );

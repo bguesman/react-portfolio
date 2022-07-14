@@ -58,7 +58,6 @@ class Header extends Component {
           <NavBar 
             modalRegistry={this.props.modalRegistry}
             setModal={this.props.setModal}
-            closeModal={this.props.closeModal}
           />
         </div>
       </div>

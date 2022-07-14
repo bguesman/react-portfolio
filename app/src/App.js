@@ -37,8 +37,15 @@ class App extends Component {
       selectedModal: 0,
       renderModal: false,
       displayModal: false,
-      modalLoaded: false
+      modalLoaded: false,
+      cursorDisplay: "normal" // one of [normal, click-for-more, click-to-copy]
     }
+  }
+
+  setCursorDisplay(display) {
+    this.setState({
+      cursorDisplay: display
+    });
   }
 
   setModal(name) {
@@ -97,13 +104,16 @@ class App extends Component {
         <Header
           modalRegistry={this.state.modalRegistry}
           setModal={this.setModal.bind(this)}
-          closeModal={this.closeModal.bind(this)}
         />
         <FluidOverlay/>
         {(this.state.modalLoaded ? "" : <ThreeCanvas simulate={!this.state.renderModal}/>)}
         <About/>
-        <ProjectExamples/>
-        <Contact/>
+        <ProjectExamples
+          modalRegistry={this.state.modalRegistry}
+          setModal={this.setModal.bind(this)}
+          setCursorDisplay={this.setCursorDisplay.bind(this)}
+        />
+        <Contact setCursorDisplay={this.setCursorDisplay.bind(this)}/>
         <Footer/>
       </div>
     );
@@ -112,7 +122,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Cursor/>
+        <Cursor display={this.state.cursorDisplay}/>
         <LoadingScreen/>
         {this.renderModal()}
         {this.renderMainPage()}

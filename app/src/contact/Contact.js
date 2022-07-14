@@ -147,7 +147,15 @@ class Contact extends Component {
       <div className="contact-container" ref={this.ref}>
         <div className="center-text-container">
           <div className="center-text">
-            <div className="center-text-float-up" style={{transform: translate}}>brad.guesman<wbr/>@gmail.com</div>
+            <div 
+              className="center-text-float-up" 
+              style={{transform: translate}}
+              onMouseEnter={() => this.props.setCursorDisplay("click-to-copy")}
+              onMouseLeave={() => this.props.setCursorDisplay("normal")}
+              onClick={() => navigator.clipboard.writeText("brad.guesman@gmail.com")}
+            >
+              brad.guesman<wbr/>@gmail.com
+            </div>
           </div>
         </div>
         <div className="wrapped-text-overlay"></div>

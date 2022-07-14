@@ -43,7 +43,10 @@ class ProjectEx extends Component {
     const orientationLeft = this.props.orientation === "left";
     return (
       <div className="align-to-bottom-container">
-        <div className="align-to-bottom">
+        <div className="align-to-bottom" 
+          onClick={this.props.openModal} 
+          onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
+          onMouseLeave={() => this.props.setCursorDisplay('normal')}>
           <ProjectExLabel
             color={color}
             planetBlack={lightColorScheme}
@@ -71,7 +74,13 @@ class ProjectEx extends Component {
         >
           {this.renderLabel()}
           <div className="project-image-container">
-            <img className="project-example-image" src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"/>
+            <img 
+              className="project-example-image" 
+              onClick={this.props.openModal}
+              onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
+              onMouseLeave={() => this.props.setCursorDisplay('normal')}
+              src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"
+            />
           </div>
         </div>
       );
@@ -82,7 +91,13 @@ class ProjectEx extends Component {
           ref={this.ref}
         >
           <div className="project-image-container">
-            <img className="project-example-image" src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"/>
+            <img 
+              className="project-example-image" 
+              onClick={this.props.openModal}
+              onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
+              onMouseLeave={() => this.props.setCursorDisplay('normal')}
+              src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"
+            />
           </div>
           {this.renderLabel()}
         </div>

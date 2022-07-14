@@ -13,19 +13,16 @@ class NavBar extends Component {
             text='WORK'
             modals={this.props.modalRegistry.modals.filter(modal => modal.type === "work")}
             setModal={this.props.setModal}
-            closeModal={this.props.closeModal}
           />
           <Menu 
             text='MUSIC'
             modals={this.props.modalRegistry.modals.filter(modal => modal.type === "music")}
             setModal={this.props.setModal}
-            closeModal={this.props.closeModal}
           />
           <Menu 
             text='EXPERIMENTS'
             modals={this.props.modalRegistry.modals.filter(modal => modal.type === "experiment")}
             setModal={this.props.setModal}
-            closeModal={this.props.closeModal}
           />
       </div>
     )
