@@ -31,12 +31,11 @@
   padding-right: 32px;
   padding-bottom: 32px;
   padding-left: 16px;
+  padding-top: 4px;
 }
 
 .dropdown {
-  background-color: #ffffff;
   max-width: 190px;
-  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2);
   z-index: 9999;
 
   padding-top: 10px;
@@ -47,9 +46,19 @@
   transform: translateY(-130%);
   transition: transform 0.5s;
 
-  /* Do these actually look good? */
+  /* VARIANT 2 */
+  background-color: #fff;
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
+
+  /* VARIANT 1 */
+  /* border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2); */
+
+  /* VARIANT 3 */
+  /* border-top: 1px solid #111;
+  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2); */
 }
 
 .menu-item {
