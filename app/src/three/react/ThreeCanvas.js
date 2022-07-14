@@ -16,6 +16,10 @@ class ThreeCanvas extends Component {
   }
 
   render() {
+    if (this.fluidHandle !== undefined) {
+      this.fluidHandle.config.simulate = this.props.simulate;
+    }
+
     return (
       // This tells us to call componentDidMount on this div? I don't fully understand it.
       <div 

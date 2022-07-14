@@ -36,7 +36,8 @@ class App extends Component {
       modalRegistry: new ModalRegistry(),
       selectedModal: 0,
       renderModal: false,
-      displayModal: false
+      displayModal: false,
+      modalLoaded: false
     }
   }
 
@@ -54,11 +55,19 @@ class App extends Component {
         displayModal: true
       });
     }, 10);
+
+    // After the transition is complete, indicate that the modal has loaded.
+    setTimeout(() => {
+      this.setState({
+        modalLoaded: true
+      });
+    }, 550);
   }
 
   closeModal() {
     // Transition modal to zero opacity.
     this.setState({
+      modalLoaded: false,
       displayModal: false
     });
 
@@ -67,7 +76,7 @@ class App extends Component {
       this.setState({
         renderModal: false
       });
-    }, 1000);
+    }, 500);
   }
 
   renderModal() {
@@ -91,7 +100,7 @@ class App extends Component {
           closeModal={this.closeModal.bind(this)}
         />
         <FluidOverlay/>
-        <ThreeCanvas/>
+        {(this.state.modalLoaded ? "" : <ThreeCanvas simulate={!this.state.renderModal}/>)}
         <About/>
         <ProjectExamples/>
         <Contact/>
