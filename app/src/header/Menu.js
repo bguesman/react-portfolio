@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom/client';
 import './menu.css';
-// import planet from './img/planet.svg';
 import arrow from './img/arrow.svg';
 
 class Menu extends Component {
@@ -10,23 +9,24 @@ class Menu extends Component {
     super(props);
 
     this.state = {
-      dropdown: false,
       hover: false
     }
-  }
-
-  setDropdownState() {
-    this.setState({
-      dropdown: !this.state.dropdown
-    })
   }
 
   renderDropdown() {
     return (
       <div className="dropdown-container">
-        <div className="dropdown" style={{transform: this.state.dropdown ? "translateY(0%)" : "translateY(-130%)"}}>
+        <div className="dropdown" style={{transform: this.props.dropdown ? "translateY(0%)" : "translateY(-105%)"}}>
           {this.props.modals.map((modal, i) => { 
-            return (<div className='menu-item' key={i} onClick={() => this.props.setModal(modal.name)}>
+            return (
+            <div 
+              className='menu-item' 
+              key={i} 
+              onClick={() => { 
+                this.props.setModal(modal.name); 
+                this.setState({ dropdown: false }); 
+              }}
+            >
               <span className='underline-on-hover'>{modal.name}</span>
             </div>)
           })}
@@ -40,7 +40,7 @@ class Menu extends Component {
       <div>
         <div
           className='menu-container' 
-          onClick={this.setDropdownState.bind(this)}
+          onClick={this.props.setDropdown}
           onMouseEnter={() => this.setState({hover: true})}
           onMouseLeave={() => this.setState({hover: false})}
         >
@@ -58,7 +58,6 @@ class Menu extends Component {
               />
             </div>
         </div>
-        {/* {(this.state.dropdown) ? this.renderDropdown() : null} */}
         {this.renderDropdown()}
       </div>
     )
