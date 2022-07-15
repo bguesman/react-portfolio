@@ -1,10 +1,10 @@
-# Everything Will Happen
+# Planetary Motion
 
 ![](https://blogs.nvidia.com/wp-content/uploads/2021/04/image-2.png)
 
 <div id="modal-scroll-point"/>
 
-<div id="modal-subtitle-container"><h2 id="modal-subtitle">Fourth indie proejct as SN0WCRASH</h2></div>
+<div id="modal-subtitle-container"><h2 id="modal-subtitle">A fun web demo of planets moving under mutual gravitational forces</h2></div>
 
 Ever since working on Virtual Sky and playing through the stunningly beautiful Zelda: Breath of the Wild, I've had a deepened appreciation for digital emulations of the Earth's atmosphere. Skies aren't just pretty—they're emotional. We have such strong associations with sunsets, sunrises, clear blue mornings and stormy evenings. To communicate those primal feelings in the digital medium is no small task.
 

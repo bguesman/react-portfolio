@@ -63,6 +63,22 @@
   color: #111;
 }
 
+/* .modal-text h2 {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  color: #111;
+}
+
+.modal-text p {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  color: #111;
+} */
+
 #modal-subtitle-container {
   overflow: hidden;
 }
