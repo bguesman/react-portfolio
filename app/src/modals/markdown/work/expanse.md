@@ -1,6 +1,6 @@
 # Expanse
 
-![](https://bguesman.github.io/docsify-test/img/1-5-0/mallow.jpg)
+![](/img/expanse/mallow.jpg)
 
 <div id="modal-scroll-point"/>
 

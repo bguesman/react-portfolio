@@ -63,6 +63,25 @@
   color: #111;
 }
 
+.modal-text figcaption {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  color: #111;
+}
+
+.modal-text a {
+  all: unset;
+  text-decoration: underline dotted 1px; 
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+
+.modal-text a:hover {
+  color: rgb(25, 164, 228);
+}
+
 /* .modal-text h2 {
   font-family: 'Amiri';
   font-style: normal;
