@@ -63,7 +63,7 @@ class Cursor extends Component {
               top: this.state.y,
               transform: "scale(4)",
               mixBlendMode: "normal",
-              background: "#eee"
+              background: this.state.copied ? "#70b373" : "#eee"
             }}
           >
             <div>

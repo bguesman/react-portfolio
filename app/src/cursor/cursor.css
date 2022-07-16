@@ -34,7 +34,7 @@ html, body {
   z-index: 100000;
 
   /* Smooth transitions for hovering various elements. */
-  transition: transform 0.25s;
+  transition: transform 0.25s, background 0.25s;
 }
 
 .cursor-text {

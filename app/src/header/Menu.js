@@ -24,7 +24,7 @@ class Menu extends Component {
               key={i} 
               onClick={() => { 
                 this.props.setModal(modal.name); 
-                this.setState({ dropdown: false }); 
+                this.props.setDropdown(null); 
               }}
             >
               <span className='underline-on-hover'>{modal.name}</span>

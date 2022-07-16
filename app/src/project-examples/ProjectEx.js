@@ -76,7 +76,7 @@ class ProjectEx extends Component {
           <div className="project-image-container">
             <img 
               className="project-example-image" 
-              onClick={this.props.openModal}
+              onClick={() => {this.props.openModal(); this.props.setCursorDisplay('normal');}}
               onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
               onMouseLeave={() => this.props.setCursorDisplay('normal')}
               src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"
@@ -93,7 +93,7 @@ class ProjectEx extends Component {
           <div className="project-image-container">
             <img 
               className="project-example-image" 
-              onClick={this.props.openModal}
+              onClick={() => {this.props.openModal(); this.props.setCursorDisplay('normal');}}
               onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
               onMouseLeave={() => this.props.setCursorDisplay('normal')}
               src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"
