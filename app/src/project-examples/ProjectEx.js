@@ -44,7 +44,7 @@ class ProjectEx extends Component {
     return (
       <div className="align-to-bottom-container">
         <div className="align-to-bottom" 
-          onClick={this.props.openModal} 
+          onClick={() => {this.props.openModal(); this.props.setCursorDisplay('normal');}} 
           onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
           onMouseLeave={() => this.props.setCursorDisplay('normal')}>
           <ProjectExLabel
