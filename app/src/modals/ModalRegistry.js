@@ -77,19 +77,24 @@ class ModalRegistry {
       },
       // EXPERIMENTS
       {
-        name: 'Lantern Village',
-        type: 'experiment',
-        markdownPath: require('./markdown/experiments/lantern-village.md')
-      },
-      {
         name: 'Music Find',
         type: 'experiment',
         markdownPath: require('./markdown/experiments/musicfind.md')
       },
       {
+        name: 'Path Tracer',
+        type: 'experiment',
+        markdownPath: require('./markdown/experiments/path-tracer.md')
+      },
+      {
         name: 'Constructibles',
         type: 'experiment',
         markdownPath: require('./markdown/experiments/constructibles.md')
+      },
+      {
+        name: 'Lantern Village',
+        type: 'experiment',
+        markdownPath: require('./markdown/experiments/lantern-village.md')
       },
       {
         name: 'Black Hole Raytracing',
@@ -105,11 +110,6 @@ class ModalRegistry {
         name: 'Virtual Sky',
         type: 'experiment',
         markdownPath: require('./markdown/experiments/virtual-sky.md')
-      },
-      {
-        name: 'Path Tracer',
-        type: 'experiment',
-        markdownPath: require('./markdown/experiments/path-tracer.md')
       },
       {
         name: 'Wet Net',

@@ -1,21 +1,23 @@
 # The Replicant
 
-![](https://blogs.nvidia.com/wp-content/uploads/2021/04/image-2.png)
+![](/img/replicant/full.jpg)
 
 <div id="modal-scroll-point"/>
 
 <div id="modal-subtitle-container"><h2 id="modal-subtitle">Smooth, lush analogue delay simulation</h2></div>
 
-Ever since working on Virtual Sky and playing through the stunningly beautiful Zelda: Breath of the Wild, I've had a deepened appreciation for digital emulations of the Earth's atmosphere. Skies aren't just pretty—they're emotional. We have such strong associations with sunsets, sunrises, clear blue mornings and stormy evenings. To communicate those primal feelings in the digital medium is no small task.
+A demo video is available [here](https://www.youtube.com/watch?v=y902-qY_0hs&t=1119s), and you can download the plugin for free [here](https://bguesman.github.io/ReplicantDelaySite/web/index.html)! It should work with most DAW's (Logic, Ableton, ProTools).
 
-I first had the idea for this project as I was slogging through the Vulkan tutorial, fantasizing about what cool stuff I could do once I had written and (hopefully) understood the 2000 or so lines of boilerplate necessary to get a triangle mesh to show up on the screen. I was playing a lot of The Witcher III's "Blood and Wine" DLC at the time, and was enamored with the vast, teal skydome that floats over the Duchy of Toussaint. In particular, I was curious about the fluffy clouds that dotted the sea of infinite blue—how do you render convincing clouds in realtime?
+After completing [Martin Finke's tutorial](http://www.martin-finke.de/blog/articles/audio-plugins-001-introduction/) on designing and building audio plugins with Oli Larkin's WDL-OL interace, I decided to try my hand at writing my own.
 
-Turns out that it's not so easy. If you're familiar with path-tracing, you know how computationally expensive it is to accurately simulate the illumination of 2D surfaces. With volumes of gas, like clouds and the atmosphere, you're adding a whole new dimension to the rendering equation. It can take hours, sometimes even days, to simulate light transport through a complex volume. In a realtime digital experience, we have milliseconds.
+"The Replicant" Analog Delay Engine is meant to emulate the sound and color of old school analog delay circuits. It sports some key features to this end—rich channel-independent modulation, distortion that can be shaped with hi-pass and low-pass filters, and "analog" meters that mimick the repeat to repeat high frequency loss present in classic analog delay units.
 
-There's also the question of modeling. Modeling the atmosphere isn't so challenging---it's easy enough to construct analytical approximations that are accurate enough for our purposes. Clouds are a different story: they get their unique shapes from the complex drama of fluid dynamics and heat dispersion playing out in the sky. While it's possible to simulate this so that it looks convincing from far away, a huge part of what really imbues clouds with a sense of scale is all of their small tendrils and swirls. Running a fluid simulation at a high enough resolution to capture these details is just too expensive in the context of a realtime application.
+Despite having a vintage sound color, the Replicant is designed to fit comfortably into a modern production workflow. Features like tempo sync of delay time and modulation, tap tempo, and L/R sync for each control allow for the precision you'd expect from a modern effects unit.
 
-At first glance the problem seems intractable. However, as you can imagine, there's been a lot of effort put into solving it.
+From a development standpoint, I ran into quite a few stumbling blocks before getting to the finished product. For one, I was bogged down for a while by some digital artifacts that would come through when the delay time was modulated. Ultimately, the solution to getting rid of these was using a robust interpolation method to cope with fractional delay times---Hermite (polynomial) interpolation did the trick.
 
-The model I chose to implement for the atmosphere is based on Sebastien Hillaire's 2020 EGSR paper. The key realization he makes that differentiates this work from its predecessors is that multiple scattering behavior in Earth's atmosphere is low-frequency---it doesn't change very quickly across the sky. Because of this, you can get away with pre-computing and caching a sort of global approximation to the multiple scattering contribution, and composite it on top of the local single-scattering result.
+I also encountered issues when attempting to implement classic analog delay feedback loop behavior. It was pretty apparent that to get baseline functionality, content already in the delay buffer had to be resampled, resulting in that swooshing time strecthing sound that anyone with a delay stompbox knows so well.
 
-The model does have some drawbacks---for one, it's extremely expensive to model fog with volumetric shadows. So I made a few modifications based on the now classic Volumetric Scattering as a Post-Process article. The final results are pretty convincing!
+The basic version of this sounded terrible. Harsh digital artifacts and aliasing abounded. I worked on this project before I understood anything about anti-aliasing and reconstruction filters. In hindsight, the right strategy here would have been to apply the right filtering to the signal when resampling. Instead, I ended up applying what was basically a 3 point low pass filter every time I wanted to resample the buffer. I think this ended up working as an anti-aliasing filter, since usually the delay control is moved slowly enough that a filter kernel of 3 ends up being roughly the right size for an AA filter anyway.
+
+Want to see the code? This is a [public repository on GitHub](https://github.com/bguesman/ReplicantDelay)!

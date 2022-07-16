@@ -122,6 +122,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <base target="_blank"/> { /* All links open in new tabs. */ }
         <Cursor display={this.state.cursorDisplay}/>
         <LoadingScreen/>
         {this.renderModal()}

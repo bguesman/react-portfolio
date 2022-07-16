@@ -1,21 +1,23 @@
 # Constructibles
 
-![](https://blogs.nvidia.com/wp-content/uploads/2021/04/image-2.png)
+![](/img/constructibles/constructibles.jpg)
 
 <div id="modal-scroll-point"/>
 
 <div id="modal-subtitle-container"><h2 id="modal-subtitle">A fun visualization of a classic mathematical result</h2></div>
 
-Ever since working on Virtual Sky and playing through the stunningly beautiful Zelda: Breath of the Wild, I've had a deepened appreciation for digital emulations of the Earth's atmosphere. Skies aren't just pretty—they're emotional. We have such strong associations with sunsets, sunrises, clear blue mornings and stormy evenings. To communicate those primal feelings in the digital medium is no small task.
+This project lives on the web! You can find it [here](https://dhalper1.github.io/Constructing_Constructibles/web/index.html).
 
-I first had the idea for this project as I was slogging through the Vulkan tutorial, fantasizing about what cool stuff I could do once I had written and (hopefully) understood the 2000 or so lines of boilerplate necessary to get a triangle mesh to show up on the screen. I was playing a lot of The Witcher III's "Blood and Wine" DLC at the time, and was enamored with the vast, teal skydome that floats over the Duchy of Toussaint. In particular, I was curious about the fluffy clouds that dotted the sea of infinite blue—how do you render convincing clouds in realtime?
+This was a project for a math course I took second semester sophomore year that focused on Galois Theory—in short, the study of the relationship between groups, fields, and polynomials. I worked with some friends at Brown—David Halpern and Adam Shelby—over the course of about a week and a half to put it together.
 
-Turns out that it's not so easy. If you're familiar with path-tracing, you know how computationally expensive it is to accurately simulate the illumination of 2D surfaces. With volumes of gas, like clouds and the atmosphere, you're adding a whole new dimension to the rendering equation. It can take hours, sometimes even days, to simulate light transport through a complex volume. In a realtime digital experience, we have milliseconds.
+One of the topics we covered was the notion of constructibility. A question of interest to the geometers of classical times was "what numbers can you construct with a compass and a straight edge"? In other words, starting with the points (0, 0) and (1, 0) in the plane and allowing yourself to only draw a finite number of lines between two points and circles with center at one point and intersecting another, what points in the plane can you get to?
 
-There's also the question of modeling. Modeling the atmosphere isn't so challenging---it's easy enough to construct analytical approximations that are accurate enough for our purposes. Clouds are a different story: they get their unique shapes from the complex drama of fluid dynamics and heat dispersion playing out in the sky. While it's possible to simulate this so that it looks convincing from far away, a huge part of what really imbues clouds with a sense of scale is all of their small tendrils and swirls. Running a fluid simulation at a high enough resolution to capture these details is just too expensive in the context of a realtime application.
+This may seem like a trivial question, but it turns out that it is not so easy to answer. In fact, it wasn't shown until 1796 that the regular 17-gon was constructible (by Gauss, when he was 18).
 
-At first glance the problem seems intractable. However, as you can imagine, there's been a lot of effort put into solving it.
+To provide a true criterion for constructibility, one has to draw a connection between the idea of "geometrically constructible" and "algebraically constructible". We've already mentioned what it means to be geometrically constructible. An algebraically constructible number is one which can be constructed from performing field operations (addition, multiplication, subtraction, division) and a finite number of square roots with rational numbers. If you know some algebra, you might recognize this as performing successive field extensions to the rationals.
 
-The model I chose to implement for the atmosphere is based on Sebastien Hillaire's 2020 EGSR paper. The key realization he makes that differentiates this work from its predecessors is that multiple scattering behavior in Earth's atmosphere is low-frequency---it doesn't change very quickly across the sky. Because of this, you can get away with pre-computing and caching a sort of global approximation to the multiple scattering contribution, and composite it on top of the local single-scattering result.
+We won't go into the proof here, but it turns out that these two definitions are actually the same—this is because there is an algorithm for performing field operations and taking square roots in the plane, and this algorithm involves only drawing lines and circles, starting with two rational points.
 
-The model does have some drawbacks---for one, it's extremely expensive to model fog with volumetric shadows. So I made a few modifications based on the now classic Volumetric Scattering as a Post-Process article. The final results are pretty convincing!
+So what does this website do? It visualizes this construction process. You enter an algebraically constructible number, and it will draw out the geometric construction process for you!
+
+Want to see the code? This is a [public repository on GitHub!](https://github.com/dhalper1/Constructing_Constructibles)

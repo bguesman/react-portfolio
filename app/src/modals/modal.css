@@ -55,7 +55,23 @@
   color: #111;
 }
 
+.modal-text h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 38px;
+  color: #111;
+}
+
 .modal-text p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 28px;
+  color: #111;
+}
+
+.modal-text li {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
