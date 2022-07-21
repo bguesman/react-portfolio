@@ -18,23 +18,23 @@ IMAGES HERE OF EXPANSE
 
 ### Design Philosophy
 
-The breakneck advance of scope that comes with productizing a creation necessitates a sort of mandatory adaptability in strategy. Rigid, top-down plans break down quickly in the face of changing circumstances. Sure, this is one of those ancient truisms that's parrotted around so often that it carries a ring of triteness, but that doesn't change that it's (sometimes painfully) accurate.
+The breakneck advance of scope that comes with productizing a creation necessitates a sort of mandatory adaptability in strategy. Rigid, top-down plans break down quickly in the face of changing circumstances. That said, to build something people like, you have to balance listening to others' advice with your own vision. In a world obsessed with collecting data it doesn't know how to use, data-driven design statistics can be the modern equivalent of the misguided focus group study.
 
-That said, to build something people like, you have to balance listening to others' advice with your own vision. In a world obsessed with collecting data it doesn't know how to use, data-driven design statistics can be the modern equivalent of the misguided focus group study. It's important to listen to your user base; it's arguably just as important to know _how_ to listen.
+Given all of this, at the outset of development, I tried to lay down a framework of principles that could serve less as a ruleset and more as a series of mantras to turn to when faced with tough decisions
 
-Given all of this, at the outset of development, I tried to lay down a framework of principles that could serve less as a ruleset and more as a series of mantras to turn to when faced with tough decisions. Some core ideas to lean on when my instincts were in conflict with what Expanse users wanted.
+**Expanse looks better than everything else.** It's crucial that people believe this because, first and foremost, Expanse is a visual product. The bar for visual fidelity, both in terms of realism and art direction of the promotional material, has to be high---even if it means inventing new things to get there.
 
-**Expanse looks better than everything else.** It's crucial that people believe this because, first and foremost, Expanse is a visual product. The success of Expanse's marketing material is entirely predicated on it looking very good. This means that the bar for visual fidelity, both in terms of realism and art direction of the promotional material, has to be high---even if it means inventing new things to get there.
+**Stellar performance**. Since Expanse is a tool for use in realtime experiences, it needs to fit cleanly into a 17ms (60 FPS) frame budget. This automatically rules out particular algorithms.
 
-**Stellar performance**. Since Expanse is a tool for use in realtime experiences, it needs to fit cleanly into a 17ms (60 FPS) frame budget, with options to scale performance based on target hardware and target framerate. This automatically rules out particular algorithms, and pursuit of this goal is often the bulk of the work of building a realtime system.
+**Everything is physically-based**. Material parameters are fully decoupled from lighting parameters, so that everything looks consistent under all lighting conditions. Rendering methods based on statistical formulations of light transport are preferred over visually-driven hacks.
 
-**Everything is physically-based**. Material parameters are fully decoupled from lighting parameters, so that everything looks consistent under all lighting conditions. Rendering methods that are based on statistical formulations of light transport are preferred over visually-driven “hacks”. Every potential authoring choice that deviates from the physically-based paradigm is demarcated as an artistic override.
+**Modularity**. Expanse must be flexible depending on use case, so modularity is a good UX paradigm. Expanse is designed as a collection of interactable “LEGO pieces” you can use to build a custom sky.
 
-**Modularity**. Since Expanse must be flexible depending on use case, modularity is a good UX paradigm. Overall, Expanse is built as a monolithic application (you either use Expanse or you don’t), but within its framework you can choose to use or not use different modular components. Put another way, Expanse is designed as a collection of interactable “LEGO pieces” you can use to build a custom sky.
+**Everything Happens in Unity**. Often times, game engines will frustratingly require artists to generate content in a more sophisticated outside application (like Houdini or Substance Designer). To author skies in Expanse, you should never have to leave your Unity project.
 
-**Intuitive, but expressive**. Novice game designers should be able to control Expanse on a high level with human-interpretable parameters, but expert technical artists should have access to the controls they need to use Expanse in a more nuanced way.
+**Intuitive, but expressive**. Novice game designers should be able to control Expanse on a high level with human-interpretable parameters, but expert technical artists should have access to more sophisticated controls.
 
-These values were useful for litmus testing new solutions to user issues. Expanse certainly doesn't hit the mark 100% of the time---some of these tenets are conflicting, so that would be impossible. That said, having these goals in the background helped to keep the product experience focused.
+These values are useful for litmus testing new solutions to user issues. Expanse certainly doesn't hit the mark 100% of the time, but having these goals in the background helps to keep the product experience focused.
 
 ### Case Study 1: The Atmosphere
 
@@ -51,22 +51,50 @@ IMAGE HERE OF LAYERS VS CREATIVE ATMOSPHERE
 
 In this way, users with more advanced needs can invest the time to build their own complex atmospheres, and everyone else can have immediate access to a fast, expressive default.
 
-Expanse is the sum total of hundreds of these little decisions, and it approaches many of them with a similar strategy: build out a powerful feature-set, and, when necessary, wrap it in a simpler interface by default.
-
-It's tempting to lean hard on this pattern of nested functionality. Go too far in this direction, though, and you'll end up hiding a lot of your product's features behind layers of cruft.
-
-To keep things accessible, Expanse places more advanced components directly underneath their high-level wrappers in Unity's GameObject hierarchy. This naturally piques users' curiosity, indicating to them that there's more to the story than what's visible at first glance.
+Expanse uses this design pattern frequently: namely, build out a powerful feature-set, and, when necessary, wrap it in a simpler interface. To keep things accessible, Expanse places more advanced components directly underneath their high-level wrappers in Unity's GameObject hierarchy. This naturally piques users' curiosity, indicating to them that there's more to the story than what's visible at first glance.
 
 ### Case Study 2: Multiple Scattering In Clouds
 
+When you think of clouds, you probably imagine white, fluffy little creatures scudding across a blue sky. What you might not realize is that this "Platonic ideal" of a cloud is notoriously challenging to simulate in realtime.
+
+Light scatters around inside of dense clouds thousands of times, brightening up parts of the cloud that would otherwise be very dark, resulting in that familiar white and fluffy appearance. The name for this repeated bouncing around of light is "multiple scattering", and simulating it is extremely computationally expensive. For this reason, most realtime systems will use some sort of cheap approximation to get the clouds looking decent.
+
+After spending a year steeped in the literature of realtime atmospheres, I made the observation that most cloud rendering systems vastly under-index on the time they spend developing a good multiple scattering approximation. From Cyberpunk 2077 to Unity's own implementation, most just throw up their hands and say "good enough".
+
+Given design tenet #1 ("Expanse looks better than everything else"), this wasn't going to work. So, early on, I decided to invest a large amount of time to develop an art-directable multiple scattering model that captures the salient features of clouds.
+
+I won't go into the details of how it works, but I think the results speak for themselves. Artists can control the multiple scattering behavior of clouds with intuitive controls like "shadowing", "ambient", and "multiple scattering amount". If they so choose, they can dig underneath and further adjust the lighting model to get the look they want.
+
+IMAGES COMPARING MULTIPLE SCATTERING PARAMETERS
+
 ### Marketing and Content Production
 
-tutorials
+Expanse simulates skies, and skies can make us feel many ways. After toying around with a lot of ideas, I decided that Expanse's promo videos should capture something reminiscent of the sense of awe you feel when faced with the pure massiveness of the natural world. They should have a moody spirituality to them, a sense of zooming out from the details of life to look at a bigger picture.
 
-music and aesthetics
+Ideally, the first encounter users have with Expanse is sensory, almost impressionistic. It consists of "promo" images and videos of Expanse looking its best---displayed on the front page of the Unity asset store, in a reddit post, in the Expanse Discord showoff channel, or on a recommended promo video on YouTube.
 
-the importance of written documentation
+These promo videos need to leave an emotional impression. They have to be more than just tech demos; they need to show the viewer the sort of art they can create with the tool, the moods they can evoke.
 
-guerilla marketing
+Because of this, I chose to lay them out more like vibey B-Roll edits, set to an ethereal soundtrack reminiscent of Washed Out's work (see the page on Expanse's score for more about this). Most of the shots are of the sky, set over big open landscapes (natural and man-made). There is no text in the videos---just footage.
+
+These videos would definitely look better if a more seasoned professional was authoring the content and stitching together the shots. But, given that it's just me working on this project, I had to make do with my own (limited) skillset.
+
+INSERT LINK TO VIDEO
+
+To back up this flashy, visual promotional material, Expanse has a series of video tutorials that explain the feature-set in depth. It also has a very complete, detailed documentation site. Both of these have been critical for educating users on the tool, and for inspiring trust in prospective customers.
+
+Most of the exposure Expanse gets is via the Unity asset store page, but guerilla marketing has also been somewhat successful. Maintaining an active Discord server and Reddit account, and posting in various communities/allowing spread through word of mouth has been an effective supplement to the visibility Expanse gets on the asset store.
 
 ### Community Management
+
+Expanse's primary channels for support are email and a very active Discord server. Generally, users who email are re-routed to the Discord server, where discussion is easier.
+
+Having an open-ended, chat-based community has been invaluable, both for Expanse as a product and for me as a developer. When the support forum is also a place to hang out, share inspiring material, and chat about projects, a collective ethos builds around the product and, in some sense, becomes a part of the product itself.
+
+This risks sounding a little sleazy, when phrased this way, but it's an honest observation. Support and advocacy on Expanse's behalf from this community of game designers, developers, and artists is one of the main reasons Expanse has been so successful.
+
+### What's Next for Expanse
+
+Currently, Expanse is on version 1.6, with plans in the works for a v1.7 to be released soon. To stay up to date, subscribe to the [Expanse Discord Server](https://discord.gg/F3VQ2vJy9p).
+
+If you or your company is looking for a virtual sky solution and would like to speak about licensing or acquiring Expanse's IP, please contact [brad.guesman@gmail.com](mailto:brad.guesman@gmail.com).
