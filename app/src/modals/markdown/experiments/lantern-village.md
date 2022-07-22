@@ -12,8 +12,10 @@ Each lantern is a meter tall and uses ultrasonic and sound sensors to change col
 
 ![](/img/lantern-village/groupshot_2.jpg)
 
+<figure>
 <img src="/img/lantern-village/pulse.gif" style="width:100%"/>
 <figcaption align = "center">The lanterns responding to a "clap!".</figcaption>
+</figure>
 
 ##
 
@@ -22,6 +24,8 @@ Each lantern is a meter tall and uses ultrasonic and sound sensors to change col
 |  ![](/img/lantern-village/eddie_1.jpg)  | ![](/img/lantern-village/closeup_1.jpg) |
 | ![](/img/lantern-village/rebecca_1.jpg) |  ![](/img/lantern-village/brad_1.jpg)   |
 
+<figure>
 <figcaption align = "center">A few of us interacting with the lanterns.</figcaption>
+</figure>
 
 ##
