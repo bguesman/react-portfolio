@@ -35,7 +35,7 @@ class ThreeFluid {
     this.config = {
       simulate: true,
       iterations: 16,
-      scale: 0.5,
+      scale: 0.25,
       radius: 0.01, // In uv space
       dt: 1/60,
       colorDecay: 0.005,
