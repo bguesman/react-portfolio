@@ -15,8 +15,9 @@ class Menu extends Component {
 
   renderDropdown() {
     return (
-      <div className="dropdown-container">
-        <div className="dropdown" style={{transform: this.props.dropdown ? "translateY(0%)" : "translateY(-105%)"}}>
+      <div className="dropdown-container" style={{pointerEvents: this.props.dropdown ? "auto" : "none"}}>
+        <div className="dropdown" style={{
+          transform: this.props.dropdown ? "translateY(0%)" : "translateY(-105%)"}}>
           {this.props.modals.map((modal, i) => { 
             return (
             <div 
