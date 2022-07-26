@@ -25,6 +25,6 @@ Finally, DRIVESim has to address a vast array of use cases, from data generation
 
 I bring all of this up because, in my time at NVIDIA, I've directly worked on all of these problems, ranging from hardcore tech (working out the strategy for multi-node execution) to more user-facing challenges (designing the procedural traffic spawner system). That's one of the most valuable parts about working on this project: having to wear pretty much every hat in the org.
 
-Building a simulator for digital worlds is also a cross-disciplinary undertaking. The DRIVESim team is massively diverse, composed of engineers, designers, 3D artists, scientists, and everyone in between. Being on the framework team has led to interfacing with almost all of them at some point of another, and that in itself has been a rewarding learning experience.
+Building a simulator for digital worlds is also a cross-disciplinary undertaking. The DRIVESim team is massively diverse, composed of engineers, designers, 3D artists, researchers, and everyone in between. Being on the framework team has led to interfacing with almost all of them at some point or another, and that in itself has been a rewarding learning experience.
 
 You can [read more about DRIVE Sim here](https://developer.nvidia.com/drive/drive-sim#:~:text=NVIDIA%20DRIVE%20Sim%E2%84%A2%20is,and%20accelerating%20time%20to%20market.).
