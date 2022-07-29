@@ -112,3 +112,9 @@ Simplicity and uniformity key were the key ideas here. Users should feel like th
 The modals themselves are split into three categories: work, music, and experiments. The decision here was largely about couching the presentation of some projects. Light-hearted projects get lumped in with "experiments", so the expectation of quality lower. Big, ambitious projects go into "work". Music gets its own category because its a fundamentally different pursuit.
 
 Most writeups are relatively short, but vary based on project scope. From an implementation perspective, the writeups are authored in markdown, to make them easier to write, and translated to React on the fly.
+
+### Wrap Up
+
+Hopefully this short writeup gave you some insights into my design process for a project like this. If you have any questions about the page---design or implementation---feel free to shoot me an email at [brad.guesman@gmail.com](mailto:brad.guesman@gmail.com).
+
+##
