@@ -16,4 +16,6 @@ The film deals with mid-20's ennui, and the score needed to mirror that sort of 
 
 Ultimately, we felt the need to modernize it slightly, so the final result split the difference between that genre and a more recent grunge/post-punk sound. Scott Pilgrim Vs. The World's score, written by Beck, was a big influence from a sonic perspective, though the song-writing remained solidly in the Green Day idiom.
 
+Check out the [film here](https://vimeo.com/386599610).
+
 ##

@@ -13,3 +13,5 @@ Some time in 2020, I collaborated on a song, _Prepared To Be Bored_, for the Fun
 </div>
 
 Most of the guitar sounds were recorded on a strat through a modded RAT, into a Princeton Reverb. The pickup was practically up against the amp's grill cloth to get out of control feedback reminiscent of Sonic Youth's guitar sounds.
+
+##
