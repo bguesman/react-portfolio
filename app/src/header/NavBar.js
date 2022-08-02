@@ -12,6 +12,20 @@ class NavBar extends Component {
     }
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  handleScroll() {
+    this.setState({
+      dropdown: null
+    });
+  }
+
   setDropdown(dropdown) {
     this.setState({
       dropdown: (dropdown === this.state.dropdown) ? null : dropdown
