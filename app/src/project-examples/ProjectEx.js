@@ -79,7 +79,7 @@ class ProjectEx extends Component {
               onClick={() => {this.props.openModal(); this.props.setCursorDisplay('normal');}}
               onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
               onMouseLeave={() => this.props.setCursorDisplay('normal')}
-              src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"
+              src={this.props.img}
             />
           </div>
         </div>
@@ -96,7 +96,7 @@ class ProjectEx extends Component {
               onClick={() => {this.props.openModal(); this.props.setCursorDisplay('normal');}}
               onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
               onMouseLeave={() => this.props.setCursorDisplay('normal')}
-              src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"
+              src={this.props.img}
             />
           </div>
           {this.renderLabel()}

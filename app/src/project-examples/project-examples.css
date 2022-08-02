@@ -51,7 +51,7 @@
 }
 
 .project-example-image {
-  max-width: 70%;
+  max-width: 80%;
   height: auto;
   padding: 40px;
 
@@ -59,7 +59,7 @@
 }
 
 .project-example-image:hover {
-  max-width: 73%;
+  max-width: 82%;
 }
 
 .align-to-bottom-container {

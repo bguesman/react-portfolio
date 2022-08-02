@@ -111,8 +111,7 @@ Tweaking the parameters can produce a wide range of results, allowing users to m
 
 |                                  |                                     |
 | :------------------------------: | :---------------------------------: |
-|  ![](/img/expanse/dense-6.jpg)   | ![](/img/expanse/sunset-clouds.jpg) |
-| ![](/img/expanse/twilight-2.jpg) | ![](/img/expanse/clouds-night.jpg)  |
+| ![](/img/expanse/twilight.jpg)   | ![](/img/expanse/sunset-clouds.jpg) |
 
 <figure>
 <figcaption align = "center">Adjusting the multiple scattering parameters and playing with the time of day can produce a wide range of appearances.</figcaption>

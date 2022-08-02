@@ -1,6 +1,6 @@
 # Drivesim
 
-![](https://blogs.nvidia.com/wp-content/uploads/2021/04/image-2.png)
+![](/img/drivesim/drivesim.png)
 
 <div id="modal-scroll-point"/>
 

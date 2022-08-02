@@ -14,6 +14,6 @@ When putting together the promo video for Expanse, I tasked myself with creating
 
 Expanse's demo videos are vibey B-roll edits of sky shots, meant to give the viewer a sense of the massiveness of the natural world. There's a sort of peacefulness about them, but also a swelling momentum that carries you to the end of the video.
 
-When composing the score, I took influence from Washed Out's work---very ethereal electronic music with organic elements, with spiritual undertones.
+When composing the score, I took influence from Washed Out's work---very ethereal electronic music with organic elements and spiritual undertones.
 
 The whole track is very low-passed, like you're hearing it in a dream. The most audible part of the ambient layer is a vocal pad that has a sort of tribal feel to it. A very reverb-ed out guitar takes the lead, giving the whole thing---which leans heavily on electronic elements---a breath of humanity.
