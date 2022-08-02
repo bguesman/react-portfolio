@@ -1,21 +1,53 @@
 # SN0WCRASH
 
-![](https://blogs.nvidia.com/wp-content/uploads/2021/04/image-2.png)
+![](/img/snowcrash/banner.jpg)
 
 <div id="modal-scroll-point"/>
 
 <div id="modal-subtitle-container"><h2 id="modal-subtitle">My main indie music project</h2></div>
 
-Ever since working on Virtual Sky and playing through the stunningly beautiful Zelda: Breath of the Wild, I've had a deepened appreciation for digital emulations of the Earth's atmosphere. Skies aren't just pretty—they're emotional. We have such strong associations with sunsets, sunrises, clear blue mornings and stormy evenings. To communicate those primal feelings in the digital medium is no small task.
+SN0WCRASH is a solo indie music project that got started when I was 18, back in 2016, making music in my childhood bedroom. Since then, I've released 3 EP's and one full length record under the alias, with a short stint playing some of the songs with my band in college, Megafauna.
 
-I first had the idea for this project as I was slogging through the Vulkan tutorial, fantasizing about what cool stuff I could do once I had written and (hopefully) understood the 2000 or so lines of boilerplate necessary to get a triangle mesh to show up on the screen. I was playing a lot of The Witcher III's "Blood and Wine" DLC at the time, and was enamored with the vast, teal skydome that floats over the Duchy of Toussaint. In particular, I was curious about the fluffy clouds that dotted the sea of infinite blue—how do you render convincing clouds in realtime?
+### Everything Will Happen
+#### 2021
 
-Turns out that it's not so easy. If you're familiar with path-tracing, you know how computationally expensive it is to accurately simulate the illumination of 2D surfaces. With volumes of gas, like clouds and the atmosphere, you're adding a whole new dimension to the rendering equation. It can take hours, sometimes even days, to simulate light transport through a complex volume. In a realtime digital experience, we have milliseconds.
+The most recent SN0WCRASH project is a full-length record I worked on with [Luke Ellingson (aka Noah Silvestry)](https://open.spotify.com/artist/3g8Gpwkqi13zbFyw9ibYWj?si=bOm9PwTdQsqr1eFX4xkb8w), [Language Please](https://open.spotify.com/artist/5gbFnBc2TKWfUWmZzw5PrP?si=B_R6JzNvS42shqMqgoLOSg), and [Demos](https://open.spotify.com/artist/33Qp3UjeMxBBKpw7Aalp9v?si=940f2e4cc28f4d34).
 
-There's also the question of modeling. Modeling the atmosphere isn't so challenging---it's easy enough to construct analytical approximations that are accurate enough for our purposes. Clouds are a different story: they get their unique shapes from the complex drama of fluid dynamics and heat dispersion playing out in the sky. While it's possible to simulate this so that it looks convincing from far away, a huge part of what really imbues clouds with a sense of scale is all of their small tendrils and swirls. Running a fluid simulation at a high enough resolution to capture these details is just too expensive in the context of a realtime application.
+These songs explore a rawer, less electronic instrumentation, and a looser sort of songwriting. The record also tells a story from start to finish, and in that way is something of a concept album.
 
-At first glance the problem seems intractable. However, as you can imagine, there's been a lot of effort put into solving it.
+<div class="spotify-wrapper" style="height:380px">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7vfpfyMJuo6D5f5HsGcddD?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</div>
 
-The model I chose to implement for the atmosphere is based on Sebastien Hillaire's 2020 EGSR paper. The key realization he makes that differentiates this work from its predecessors is that multiple scattering behavior in Earth's atmosphere is low-frequency---it doesn't change very quickly across the sky. Because of this, you can get away with pre-computing and caching a sort of global approximation to the multiple scattering contribution, and composite it on top of the local single-scattering result.
+### U. V. Captcha
+#### 2016
 
-The model does have some drawbacks---for one, it's extremely expensive to model fog with volumetric shadows. So I made a few modifications based on the now classic Volumetric Scattering as a Post-Process article. The final results are pretty convincing!
+The first SN0WCRASH project was a collection of songs I wrote and produced right before I went to college. 
+
+Equipped with my telecaster, my Akai keyboard, and Logic Pro X's built-in bitcrusher, the EP is decidedly indie-electronic. Topically, the songs revolve around identity and alienation in an increasingly digital world.
+
+<div class="spotify-wrapper" style="height:200px">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/34mauH8gVLtjAkzH0wOoqK?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</div>
+
+### Don't Get Your Hopes Up
+#### 2019
+
+This EP was written and recorded over the summer of 2019, when I was living in Madison, Wisconsin. [Jamie Atschinow](https://soundcloud.com/jamie-ats?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing) provided vocals and vocal arrangement work.
+
+The song topics gravitate toward loneliness and regret. Palette-wise, the instrumentation is further in the synth-wave direction; the synths and melodies have an 80's alternative tinge.
+
+<div class="spotify-wrapper" style="height:200px">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4jClBrSEpWc4OLifGbsLxD?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</div>
+
+### Singularity
+#### 2017
+
+I worked on this EP in my dorm a freshman in college, and then through the summer afterward while I was back in California.
+
+Coming off of working on U. V. Captcha, this EP is significantly more electronic, and less indie-disco. It's darker, but still very pop-forward, with lyrics that are more personal and less concept-driven.
+
+<div class="spotify-wrapper" style="height:200px">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4zJpExeraCqYhUG0MRnSAR?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</div>

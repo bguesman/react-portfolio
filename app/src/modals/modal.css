@@ -63,6 +63,14 @@
   color: #111;
 }
 
+.modal-text h4 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  color: #111;
+}
+
 .modal-text p {
   font-family: 'Roboto';
   font-style: normal;
