@@ -8,7 +8,7 @@
 
 Somewhere around mid-2021, in the thick of managing Expanse support requests and giving 3D artists advice on making beautiful skies, I started to think of myself less as a developer and more as a product designer. Maybe this was wishful thinking more than anything else, but that kernel of a feeling gradually changed the way I relate to software. Hence the title of this site, Brad Guesman: _Creative Technologist_.
 
-Ruminating about the job search, coming off a round of Tech Art interviews that turned into (almost successful) conversations about acquiring Expanse, I resolved to put together a portfolio page that was something I could be proud of. Something that reflects the creative nature of the work I enjoy.
+Ruminating about the job search, coming off a round of Tech Art interviews that turned into (almost successful) conversations about acquiring Expanse, I resolved to put together a portfolio page that reflects the creative nature of the work I enjoy.
 
 The project took almost two and a half months from start to finish---from gathering a mood board, to blocking out page concepts on Figma, to implementing it from scratch in React (including what I think is the first interactive fluid sim built for a website splash screen). Plenty of real struggles blocked the way, not all of them surmounted; if anyone knows how to render a custom cursor over a YouTube embed, DM me.
 
@@ -65,7 +65,7 @@ I wanted to lean into the "show not tell" strategy for all the main page content
 <figcaption align = "center">Initial block-out and description of the rolodex.</figcaption>
 </figure>
 
-One like this because because it underscores a diversity of interests in a meta-textual way. In the way it presents in the information, it's almost saying "look, I'm versatile".
+I like this because it underscores a diversity of interests in a meta-textual way. In the way it presents in the information, it's almost saying "look, I'm versatile".
 
 It's also good that it's dynamic, because it helps sustain the momentum from the fluid sim landing page. Experimenting with a static writeup here felt jarring.
 
@@ -102,14 +102,14 @@ Just displaying the email keeps the messaging concise. Unobtrusive social icons 
 
 The primary way visitors learn about various projects I've worked on is through their respective project modals. These fade in over the main page, and are accessed via links in the nav bar (or clicking on the projects in the project examples section).
 
-Simplicity and uniformity key were the key ideas here. Users should feel like they're reading a page in something like a biological compendium, a sort of catalogue. The focus is on the information and project images, and the site aesthetics move into a supporting role to make room for a diverse range of content.
+Simplicity and uniformity were the key ideas here. Users should feel like they're reading a page in some kind of biological compendium, a catalogue. The focus is on the information and project images, and the site aesthetics move into a supporting role to make room for a diverse range of content.
 
 ![](/img/site/modal.png)
 <figure>
 <figcaption align = "center">A snippet of the modal for Expanse.</figcaption>
 </figure>
 
-The modals themselves are split into three categories: work, music, and experiments. The decision here was largely about couching the presentation of some projects. Light-hearted projects get lumped in with "experiments", so the expectation of quality lower. Big, ambitious projects go into "work". Music gets its own category because its a fundamentally different pursuit.
+The modals themselves are split into three categories: work, music, and experiments. The decision here was largely about couching the presentation of some projects. Light-hearted projects get lumped in with "experiments", so the expectation of quality is lower. Big, ambitious projects go into "work". Music gets its own category because it's a fundamentally different pursuit.
 
 Most writeups are relatively short, but vary based on project scope. From an implementation perspective, the writeups are authored in markdown, to make them easier to write, and translated to React on the fly.
 
