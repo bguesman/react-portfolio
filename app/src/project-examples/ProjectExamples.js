@@ -4,6 +4,7 @@ import './project-examples.css';
 import expanse from './img/expanse-project-example.jpg';
 import drivesim from './img/drivesim-project-example.jpg';
 import mw from './img/mw-project-example.jpg';
+import snowcrash from './img/snowcrash-project-example.jpg';
 
 import ProjectExamplesHeader from "./ProjectExamplesHeader";
 import ProjectEx from "./ProjectEx";
@@ -35,7 +36,7 @@ class ProjectExamples extends Component {
           openModal={() => this.props.setModal("DRIVE Sim")}
           setCursorDisplay={this.props.setCursorDisplay}
         />
-        <ProjectEx
+        {/* <ProjectEx
           colorScheme={"dark"}
           orientation={"left"}
           title={"Modern Warfare"}
@@ -43,6 +44,16 @@ class ProjectExamples extends Component {
           img={mw}
           description={"Building user-centered, immersive sound propagation systems."}
           openModal={() => this.props.setModal("Modern Warfare")}
+          setCursorDisplay={this.props.setCursorDisplay}
+        /> */}
+        <ProjectEx
+          colorScheme={"dark"}
+          orientation={"left"}
+          title={"SN0WCRASH"}
+          subtitle={"Music Producer"}
+          img={snowcrash}
+          description={"Solo indie music project."}
+          openModal={() => this.props.setModal("SN0WCRASH")}
           setCursorDisplay={this.props.setCursorDisplay}
         />
       </div>
