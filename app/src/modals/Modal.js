@@ -29,12 +29,33 @@ class Modal extends Component {
       });
       
     setTimeout(() => {
-      document.getElementById('modal-scroll-point').scrollIntoView( { behavior: "smooth", block: "start" } );
+      const scrollPoint = document.getElementById('modal-scroll-point');
+      if (scrollPoint != null && !this.subtitleVisible()) {
+        scrollPoint.scrollIntoView( { behavior: "smooth", block: "start" } );
+      }
     }, 2000);
 
-    setTimeout(() => {
-      document.getElementById('modal-subtitle').style.transform = "translateY(0%)";
-    }, 2200);
+    const container = document.getElementsByClassName('modal-container')[0];
+    container.addEventListener('scroll', this.onScroll.bind(this));
+  }
+
+  componentWillUnmount() {
+    const container = document.getElementsByClassName('modal-container')[0];
+    container.removeEventListener('scroll', this.onScroll.bind(this));
+  }
+
+  subtitleVisible() {
+    const subtitle = document.getElementById('modal-subtitle');
+    const thisY = subtitle.getBoundingClientRect().top;
+    return thisY < (window.innerHeight * 0.9);
+  }
+
+  onScroll(event) {
+    const subtitle = document.getElementById('modal-subtitle');
+    subtitle.style.transform = 
+      this.subtitleVisible() ? 
+      "translateY(0%)" :
+      "translateY(120%)";
   }
 
   render() {
