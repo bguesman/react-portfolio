@@ -34,7 +34,7 @@ class Rolodex extends Component {
   render() {
     return (
       <div className="about-rolodex" style={{transform: this.props.translateStyle}}>
-        {this.props.prefix}
+        {this.props.prefix}<br/>
         <TextTransition
           className="about-rolodex-highlight" 
           springConfig={presets.gentle} inline={true}>
