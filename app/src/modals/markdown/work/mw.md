@@ -6,11 +6,11 @@
 
 <div id="modal-subtitle-container"><h2 id="modal-subtitle">Interactive, informative game audio systems</h2></div>
 
-I spent the summer in 2019 working at Raven Software on the Call of Duty: Modern Warfare's audio engine. After some initial experimentation, me and the team decided I would focus on improving the sound transport system---the system that determines how sound gets propagated around COD's virtual world.
+I spent the summer in 2019 working at Raven Software on the Call of Duty: Modern Warfare audio engine. After some initial experimentation, me and the team decided I would focus on improving sound transport---the system that determines how sound travels around COD's virtual world.
 
 ### Sound Transport
 
-In the real world, sound transport is a matter of airwaves propagating around an environment. Modeling this in a game is both computationally intractable and hard to art-direct, so transport is generally split up into a few piecemeal "effects" that mimick the salient perceptual features,
+In the real world, sound transport is a matter of air pressure waves bouncing around an environment. Modeling this in a game is both computationally intractable and hard to art-direct, so transport is generally split up into a few piecemeal "effects" that mimick the salient perceptual features,
 
 - **Reverb/Reflections.** This the echo you hear when you make a loud sound in a room.
 - **Spatialization.** Sound arrives at each of your ears at different times, and gets filtered in a particular way depending on where the source is. This influences what "direction" you think a sound is coming from.
@@ -29,7 +29,7 @@ The way that the engine computed occlusion was pretty basic, but was reliable an
 <figcaption align = "center">The old system estimated occlusion by performing raycasts toward the sound source from the left and right of the player. This worked ok, but had its flaws.</figcaption>
 </figure>
 
-We noticed that this approach lacked a few salient features of real world occlusion. For one, as the player gets close to a big obstacle, it should up more of their field of view, and thus have more occluding power. In this sort of case, the old strategy actually allows sound to pass through big occluders, like in the following diagram.
+We noticed that this approach lacked a few salient features of real world occlusion. For one, as the player gets close to a big obstacle, it should mask more of their field of view, and thus have more occluding power. In this case, the old strategy allows sound to pass through big occluders, like in the following diagram.
 
 <figure>
 <p align="center">
@@ -38,9 +38,9 @@ We noticed that this approach lacked a few salient features of real world occlus
 <figcaption align = "center">Using the old system, a close up occluder that takes up most of the listener's field of view would fail to occlude a sound on the other side.</figcaption>
 </figure>
 
-Another flaw with the old system was that it lacked vertical occlusion information. For much of COD's history, this hasn't been crucial. In old school COD, you could pretty much guess the player would spend most of their time walking down tight corridors.
+Another flaw with the old system was that it lacked vertical occlusion information. For much of COD's history, this hasn't been a big deal. In old school COD, the spends most of their time walking down tight corridors.
 
-The development of Warzone changed this assumption. Maps were about to get much larger, and incorporate varied building structures with more "verticality". In this environment, not handling vertical occlusion breaks immersion and gives players the false impression that sounds are much closer or farther away than they really are.
+The development of Warzone changed this. Maps were about to get much larger, and incorporate varied building structures with more "verticality". In this environment, not handling vertical occlusion breaks immersion and gives players the false impression that sounds are much closer or farther away than they really are.
 
 |                                |                                      |
 | :----------------------------: | :----------------------------------: |
@@ -63,7 +63,7 @@ To address both these issues, we took inspiration from the concept of Fresnel Zo
 
 This occlusion estimate has both of the properties that we need it to. It reciprocally takes into account the proximity of occluders to the source _and_ the listener. It also takes into account occlusion across all spatial dimensions, so it naturally accounts for vertical obstacles.
 
-The primary way you can get information about surrounding geometry in COD is via raycasts. We were able to approximately discretize the Fresnel zone with paths made out of two raycasts each, shown in the diagram below.
+The primary way you can get information about surrounding geometry in COD is via raycasts. We were able to approximately discretize the Fresnel zone with paths made out of two raycasts each, as shown in the diagram below.
 
 <figure>
 <p align="center">

@@ -19,7 +19,7 @@ This is too much work for a single machine (even one with 8 massive GPU's), so D
 DRIVESim users also need to collect metrics on performance after scenario execution, and synthetically generate data for non-realtime use (training a perception model, for instance). DRIVESim solves both of these issues by enforcing that simulation runs are loggable and deterministic. This means both that,
 
 1. All procedural elements have to be tightly controlled and seeded.
-2. All simulation state needs to be captured in a common, performant serializable data structure---i.e., no simulate state can be stored as transient runtime data (in local C++ data structures, for instance).
+2. All simulation state needs to be captured in a common, performant serializable data structure---i.e., no state can be stored as transient runtime data (in local C++ data structures, for instance).
 
 Finally, DRIVESim has to address a vast array of use cases, from data generation, to validation, to AV stack "debugging". Emphasizing that last case, the scenario description needs to be rich; users need to be able to author specific scenarios to isolate specific behaviors. Above that base level of expressiveness, though, users need to have coarser-grained procedural controls to quickly author more complex and varied test cases.
 
@@ -28,3 +28,5 @@ I bring all of this up because, in my time at NVIDIA, I've directly worked on al
 Building a simulator for digital worlds is also a cross-disciplinary undertaking. The DRIVESim team is massively diverse, composed of engineers, designers, 3D artists, researchers, and everyone in between. Being on the framework team has led to interfacing with almost all of them at some point or another, and that in itself has been a rewarding learning experience.
 
 You can [read more about DRIVE Sim here](https://developer.nvidia.com/drive/drive-sim#:~:text=NVIDIA%20DRIVE%20Sim%E2%84%A2%20is,and%20accelerating%20time%20to%20market.).
+
+##
