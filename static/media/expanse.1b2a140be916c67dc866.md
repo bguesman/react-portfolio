@@ -1,6 +1,6 @@
 # Expanse (Score)
 
-![](/img/expanse/twilight.jpg)
+![](img/expanse/twilight.jpg)
 
 <div id="modal-scroll-point"/>
 

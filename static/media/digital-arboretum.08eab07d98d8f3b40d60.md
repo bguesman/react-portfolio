@@ -1,6 +1,6 @@
 # Digital Arboretum
 
-![](/img/digital-arboretum/golf-course.png)
+![](img/digital-arboretum/golf-course.png)
 
 <div id="modal-scroll-point"/>
 
@@ -14,8 +14,8 @@ We also set a goal of keeping things as modular as possible. Keeping this in min
 
 |                                        |                                           |
 | :------------------------------------: | :---------------------------------------: |
-| ![](/img/digital-arboretum/orange.png) |   ![](/img/digital-arboretum/green.png)   |
-| ![](/img/digital-arboretum/willow.png) | ![](/img/digital-arboretum/jacaranda.png) |
+| ![](img/digital-arboretum/orange.png) |   ![](img/digital-arboretum/green.png)   |
+| ![](img/digital-arboretum/willow.png) | ![](img/digital-arboretum/jacaranda.png) |
 
 <figure>
 <figcaption align = "center">A wide variety of trees can be generated with Digital Arboretum.</figcaption>
@@ -31,7 +31,7 @@ Even with these modifications, the trees still didn't look quite right. We reali
 
 <figure>
 <p align="center">
-    <img src="/img/digital-arboretum/neon.png">
+    <img src="img/digital-arboretum/neon.png">
 </p>
 <figcaption align = "center">Having some fun with emissive shaders in blender.</figcaption>
 </figure>

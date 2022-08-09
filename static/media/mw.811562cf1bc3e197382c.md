@@ -1,6 +1,6 @@
 # Modern Warfare
 
-![](/img/mw/farah.jpeg)
+![](img/mw/farah.jpeg)
 
 <div id="modal-scroll-point"/>
 
@@ -24,7 +24,7 @@ The way that the engine computed occlusion was pretty basic, but was reliable an
 
 <figure>
 <p align="center">
-    <img src="/img/mw/old.jpg">
+    <img src="img/mw/old.jpg">
 </p>
 <figcaption align = "center">The old system estimated occlusion by performing raycasts toward the sound source from the left and right of the player. This worked ok, but had its flaws.</figcaption>
 </figure>
@@ -33,7 +33,7 @@ We noticed that this approach lacked a few salient features of real world occlus
 
 <figure>
 <p align="center">
-    <img src="/img/mw/problem.jpg">
+    <img src="img/mw/problem.jpg">
 </p>
 <figcaption align = "center">Using the old system, a close up occluder that takes up most of the listener's field of view would fail to occlude a sound on the other side.</figcaption>
 </figure>
@@ -44,7 +44,7 @@ The development of Warzone changed this. Maps were about to get much larger, and
 
 |                                |                                      |
 | :----------------------------: | :----------------------------------: |
-| ![](/img/mw/vertical-1.jpg) | ![](/img/mw/vertical-2.jpg) |
+| ![](img/mw/vertical-1.jpg) | ![](img/mw/vertical-2.jpg) |
 
 <figure>
 <figcaption align = "center">Vertical environments in COD: Warzone necessitate a non-planar sound occlusion system.</figcaption>
@@ -56,7 +56,7 @@ To address both these issues, we took inspiration from the concept of Fresnel Zo
 
 <figure>
 <p align="center">
-    <img src="/img/mw/fresnel.jpg">
+    <img src="img/mw/fresnel.jpg">
 </p>
 <figcaption align = "center">The "Fresnel Zone" is an ellipsoid with the listener and sound source at the foci. If you project the occluders onto the ellipsoid cross-section, you can estimate the occlusion as the proportion of the cross-section that's filled in.</figcaption>
 </figure>
@@ -67,7 +67,7 @@ The primary way you can get information about surrounding geometry in COD is via
 
 <figure>
 <p align="center">
-    <img src="/img/mw/discretize.jpg">
+    <img src="img/mw/discretize.jpg">
 </p>
 <figcaption align = "center">You can approximately discretize the Fresnel Zone with paths, each made up of two raycasts.</figcaption>
 </figure>

@@ -1,6 +1,6 @@
 # Wet Net
 
-![](/img/wetnet/wetnet-alt.jpg)
+![](img/wetnet/wetnet-alt.jpg)
 
 <div id="modal-scroll-point"/>
 
@@ -17,15 +17,15 @@ As a reminder from the fluid dynamics course that I'm sure we all took in underg
 
 The [Navier-Stokes equations](https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations) tell us how such a fluid’s state evolves with time. The job of a fluid sim is to discretize the fluid’s state somehow, and then approximate a solution to the Navier-Stokes equations to time evolve the fluid. We represent v(x, t) and ⍴(x, t) as discretized grids that we can sample at any point via interpolation.
 
-![](/img/wetnet/interpolate.jpg)
+![](img/wetnet/interpolate.jpg)
 
 Then, a really, really high-level diagram of a traditional fluid sim might look something like the following:
 
-![](/img/wetnet/traditional-sim.jpg)
+![](img/wetnet/traditional-sim.jpg)
 
 Our goal was to augment such a fluid simulation such that, given hi-res V(x, t) and Ρ(x, t), we downsample them to a lower resolution to get V(x, t) and ⍴(x, t), use a fluid sim to get v(x, t + 1) and ⍴(x, t + 1), and run the result through Wetnet to upsample the grids to get an approximation of V(x, t + 1) and Ρ(x, t + 1). Using yet another high-level diagram:
 
-![](/img/wetnet/wetnet-sim.jpg)
+![](img/wetnet/wetnet-sim.jpg)
 
 Our model architecture is an extended autoencoder that shrinks frames of the velocity grid down to features using convolutional layers, and then upsamples them with transposed convolutional layers to predict a modification to the velocity field. We then add this predicted offset to the original lo-res field to get our estimate of the hi-res field.
 
@@ -45,11 +45,11 @@ Our third loss term is not an L2 loss at all, but rather a discriminator loss. W
 
 So, with that, we have our final architecture diagram, discriminator included.
 
-![](/img/wetnet/architecture.jpg)
+![](img/wetnet/architecture.jpg)
 
 Here is an image of our results. The above image is a screen capture of our results. On the left is the low resolution fluid simulation, and on the right is the detailed target fluid simulation. The middle is our upsampled simulation.
 
-![](/img/wetnet/compare.jpg)
+![](img/wetnet/compare.jpg)
 
 While we don’t achieve the fine-grained details of the high resolution fluid simulation, our simulation still displays some of the curls and vortices that the low-resolution simulation could not capture. We also found that the deep-learning-upsampled simulation took about 25% less time to run when compared to the high resolution simulation, which was one of our ultimate goals. We predict that this number would be even more relevant as the target simulations became higher and higher resolution, and is a promising observation for production fluid simulations that have high speed and computational demands.
 

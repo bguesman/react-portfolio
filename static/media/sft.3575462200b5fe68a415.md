@@ -1,6 +1,6 @@
 # Shape From Tracing
 
-![](/img/sft/dragon.png)
+![](img/sft/dragon.png)
 
 <div id="modal-scroll-point"/>
 
@@ -16,7 +16,7 @@ One of the pitches for using a (computationally heavy) differentiable path trace
 
 <figure>
 <p align="center">
-    <img src="/img/sft/gi.png">
+    <img src="img/sft/gi.png">
 </p>
 <figcaption align = "center">One of our most demonstrative ablation studies. Even though the floor is actually grey, failing to account for global illumination causes the optimization process to believe it's purple, "baking in" the illumination from the walls into the albedo.</figcaption>
 </figure>
