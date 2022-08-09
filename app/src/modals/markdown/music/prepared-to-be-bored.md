@@ -1,6 +1,6 @@
 # Prepared To Be Bored
 
-![](/img/prepared-to-be-bored/splash.jpg)
+![](img/prepared-to-be-bored/splash.jpg)
 
 <div id="modal-scroll-point"/>
 

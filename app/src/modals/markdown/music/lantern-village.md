@@ -1,6 +1,6 @@
 # Lantern Village (Score)
 
-![](/img/lantern-village/lantern-village.jpg)
+![](img/lantern-village/lantern-village.jpg)
 
 <div id="modal-scroll-point"/>
 

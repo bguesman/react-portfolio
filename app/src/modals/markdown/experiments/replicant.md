@@ -1,6 +1,6 @@
 # The Replicant
 
-![](/img/replicant/full.jpg)
+![](img/replicant/full.jpg)
 
 <div id="modal-scroll-point"/>
 

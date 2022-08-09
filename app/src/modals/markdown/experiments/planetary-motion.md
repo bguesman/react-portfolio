@@ -1,6 +1,6 @@
 # Planetary Motion
 
-![](/img/planetary-motion-sim/planetary-motion-sim.jpg)
+![](img/planetary-motion-sim/planetary-motion-sim.jpg)
 
 <div id="modal-scroll-point"/>
 

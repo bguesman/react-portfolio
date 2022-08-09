@@ -1,6 +1,6 @@
 # Lantern Village
 
-![](/img/lantern-village/lantern-village.jpg)
+![](img/lantern-village/lantern-village.jpg)
 
 <div id="modal-scroll-point"/>
 
@@ -10,10 +10,10 @@ As project leaders for Brown cyberSTEAM (STEM + Art), Eddie Jiao and I organized
 
 Each lantern is a meter tall and uses ultrasonic and sound sensors to change color depending on human presence and environmental sound. All the firmware written to run on arduino mega's—each lantern needed quite a few PWM's to drive the LED strips! The housings for each lantern were 3D printed from masonite.
 
-![](/img/lantern-village/groupshot_2.jpg)
+![](img/lantern-village/groupshot_2.jpg)
 
 <figure>
-<img src="/img/lantern-village/pulse.gif" style="width:100%"/>
+<img src="img/lantern-village/pulse.gif" style="width:100%"/>
 <figcaption align = "center">The lanterns responding to a "clap!".</figcaption>
 </figure>
 
@@ -21,8 +21,8 @@ Each lantern is a meter tall and uses ultrasonic and sound sensors to change col
 
 |                                         |                                         |
 | :-------------------------------------: | :-------------------------------------: |
-|  ![](/img/lantern-village/eddie_1.jpg)  | ![](/img/lantern-village/closeup_1.jpg) |
-| ![](/img/lantern-village/rebecca_1.jpg) |  ![](/img/lantern-village/brad_1.jpg)   |
+|  ![](img/lantern-village/eddie_1.jpg)  | ![](img/lantern-village/closeup_1.jpg) |
+| ![](img/lantern-village/rebecca_1.jpg) |  ![](img/lantern-village/brad_1.jpg)   |
 
 <figure>
 <figcaption align = "center">A few of us interacting with the lanterns.</figcaption>

@@ -1,7 +1,7 @@
 # Watercolor
 
 <p align="center">
-    <img src="/img/keybird/splash.jpg">
+    <img src="img/keybird/splash.jpg">
 </p>
 
 <div id="modal-scroll-point"/>

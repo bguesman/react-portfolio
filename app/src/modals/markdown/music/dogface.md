@@ -1,6 +1,6 @@
 # Dogface
 
-![](/img/dogface/splash.png)
+![](img/dogface/splash.png)
 
 <div id="modal-scroll-point"/>
 

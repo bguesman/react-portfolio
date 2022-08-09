@@ -1,6 +1,6 @@
 # SN0WCRASH
 
-![](/img/snowcrash/banner.jpg)
+![](img/snowcrash/banner.jpg)
 
 <div id="modal-scroll-point"/>
 

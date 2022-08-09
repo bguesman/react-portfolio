@@ -1,6 +1,6 @@
 # Black Hole Raytracing
 
-![](/img/black-holes/black-holes.jpg)
+![](img/black-holes/black-holes.jpg)
 
 <div id="modal-scroll-point"/>
 
@@ -42,6 +42,6 @@ Want to see the code? This is a [public repository on GitHub!](https://github.co
 
 |                                      |                                      |
 | :----------------------------------: | :----------------------------------: |
-| ![](/img/black-holes/stars-1-bh.jpg) | ![](/img/black-holes/stars-2-bh.jpg) |
+| ![](img/black-holes/stars-1-bh.jpg) | ![](img/black-holes/stars-2-bh.jpg) |
 
 ##

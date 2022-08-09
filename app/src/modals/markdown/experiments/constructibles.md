@@ -1,6 +1,6 @@
 # Constructibles
 
-![](/img/constructibles/constructibles.jpg)
+![](img/constructibles/constructibles.jpg)
 
 <div id="modal-scroll-point"/>
 

@@ -1,6 +1,6 @@
 # Drivesim
 
-![](/img/drivesim/drivesim.png)
+![](img/drivesim/drivesim.png)
 
 <div id="modal-scroll-point"/>
 

@@ -1,6 +1,6 @@
 # Virtual Sky
 
-<img src="/img/virtual-sky/moody.jpg" style="width:100%"/>
+<img src="img/virtual-sky/moody.jpg" style="width:100%"/>
 
 <div id="modal-scroll-point"/>
 
@@ -30,7 +30,7 @@ To implement semi-Lagrangian advection, we had to implement a voxel grid class i
 
 Here's a fun little animation we rendered of a high-vorticity fluid to demonstrate our implementation of Stam's method. To generate it, we wrote out the voxel grid to a file using OpenVDB, and rendered it using Maya/Arnold.
 
-<img src="/img/virtual-sky/vortexconverted.gif" style="width:100%"/>
+<img src="img/virtual-sky/vortexconverted.gif" style="width:100%"/>
 
 Semi-Lagrangian advection is pretty cool, but it's not without its faults. It is not inherently mass-conserving (though it can be made to be), and it also can have trouble handling particular boundary conditions, as we found out painfully during our implementation process.
 
@@ -68,7 +68,7 @@ All in all, this was a very challenging project, and debugging the various bound
 
 Want to see the code? This is a [private repository on GitHub](https://github.com/bguesman/clouds) for academic code reasons. Email me and I can give you access (as long as you're not a student at Brown in CS224!).
 
-<img src="/img/virtual-sky/hopeful.jpg" style="width:100%"/>
-<img src="/img/virtual-sky/swift.jpg" style="width:100%"/>
+<img src="img/virtual-sky/hopeful.jpg" style="width:100%"/>
+<img src="img/virtual-sky/swift.jpg" style="width:100%"/>
 
 ##

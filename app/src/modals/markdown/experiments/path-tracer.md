@@ -1,6 +1,6 @@
 # Path Tracer
 
-![](/img/path-tracer/path-tracer.jpg)
+![](img/path-tracer/path-tracer.jpg)
 
 <div id="modal-scroll-point"/>
 
@@ -28,7 +28,7 @@ Want to see the code? This is a [private repository on GitHub](https://github.co
 
 |                                     |                                     |                                     |
 | :---------------------------------: | :---------------------------------: | ----------------------------------- |
-| ![](/img/path-tracer/cornell-1.jpg) | ![](/img/path-tracer/cornell-1.jpg) | ![](/img/path-tracer/cornell-3.jpg) |
+| ![](img/path-tracer/cornell-1.jpg) | ![](img/path-tracer/cornell-1.jpg) | ![](img/path-tracer/cornell-3.jpg) |
 
 <figcaption align = "center">Some cornell boxes rendered with importance sampling.</figcaption>
 
@@ -36,7 +36,7 @@ Want to see the code? This is a [private repository on GitHub](https://github.co
 
 <figure>
 <p align="center">
-    <img src="/img/path-tracer/tree.jpg">
+    <img src="img/path-tracer/tree.jpg">
 </p>
 <figcaption align="center">A tree from the Digital Arboretum project, rendered with the path tracer.</figcaption>
 </figure>
