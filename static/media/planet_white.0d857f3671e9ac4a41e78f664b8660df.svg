@@ -1,0 +1,17 @@
+<svg
+  width="33"
+  height="33"
+  viewBox="0 0 33 33"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+<circle
+    cx="16.8523"
+    cy="16.1477"
+    r="14.1477"
+    stroke="#ffffff"
+    stroke-width="2"
+  />
+<path d="M1 32L32 1" stroke="#ffffff" stroke-width="2" />
+<circle cx="12.6251" cy="11.2159" r="2.46591" fill="#ffffff" />
+</svg>
