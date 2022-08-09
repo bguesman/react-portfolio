@@ -30,16 +30,31 @@ import CompositePass from "./passes/CompositePass";
 class ThreeFluid {
 
   // This object is constructed when its parent react component is loaded
-  constructor(mount) {
+  constructor(mount, gpuTier) {
+    console.log("REPORTED GPU TIER: ");
+    console.log(gpuTier);
+
     // Config options
     this.config = {
       simulate: true,
-      iterations: 16,
-      scale: 0.5,
+      iterations: 4,
+      scale: 0.25,
       radius: 0.01, // In uv space
       dt: 1/60,
       colorDecay: 0.005,
       vorticity: 10
+    };
+
+    // Adjust config based on gpu power
+    if (gpuTier.tier <= 1) {
+      this.config.iterations = 4;
+      this.config.scale = 0.25;
+    } else if (gpuTier.tier <= 2) {
+      this.config.iterations = 8;
+      this.config.scale = 0.25;
+    } else {
+      this.config.iterations = 16;
+      this.config.scale = 0.5;
     }
 
     this.setupScene(mount);

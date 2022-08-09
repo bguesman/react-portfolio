@@ -3,16 +3,20 @@ import ReactDOM from 'react-dom/client';
 import * as THREE from "three";
 import './three-canvas.css';
 
+import { getGPUTier } from 'detect-gpu';
+
 import ThreeFluid from "../fluid/Fluid";
 
 class ThreeCanvas extends Component {
 
-  componentDidMount() {
-    this.fluidHandle = new ThreeFluid(this.mount);
+  async componentDidMount() {
+    const gpuTier = await getGPUTier();
+    this.fluidHandle = new ThreeFluid(this.mount, gpuTier);
   }
 
-  componentWillUnmount() {
-    this.fluidHandle.cleanup();
+  async componentWillUnmount() {
+    if (this.fluidHandle)
+      this.fluidHandle.cleanup();
   }
 
   render() {
