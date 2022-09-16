@@ -38,6 +38,7 @@ class App extends Component {
       renderModal: false,
       displayModal: false,
       modalLoaded: false,
+      mobile: window.innerWidth < 640,
       cursorDisplay: "normal" // one of [normal, click-for-more, click-to-copy]
     }
   }
@@ -46,6 +47,21 @@ class App extends Component {
     this.setState({
       cursorDisplay: display
     });
+  }
+
+  componentDidMount() 
+  {
+    window.addEventListener('resize', this.updateDimensions.bind(this));
+  }
+
+  componentWillUnmount() 
+  {
+    window.removeEventListener('resize', this.updateDimensions.bind(this));
+  }
+
+  updateDimensions()
+  {
+    this.setState({mobile: window.innerWidth < 640});
   }
 
   setModal(name) {
@@ -91,6 +107,7 @@ class App extends Component {
       return (
         <Modal
           visible={this.state.displayModal}
+          mobile={this.state.mobile}
           closeModal={this.closeModal.bind(this)}
           markdownPath={this.state.modalRegistry.modals[this.state.selectedModal].markdownPath}
         />
@@ -119,7 +136,8 @@ class App extends Component {
     );
   }
 
-  render() {
+  renderDesktop()
+  {
     return (
       <div className="App">
         <base target="_blank"/> { /* All links open in new tabs. */ }
@@ -129,6 +147,36 @@ class App extends Component {
         {this.renderMainPage()}
       </div>
     )
+  }
+
+  renderMobile()
+  {
+    return (
+      <div className="App">
+        <base target="_blank"/> { /* All links open in new tabs. */ }
+        <Cursor display={this.state.cursorDisplay}/>
+        <LoadingScreen/>
+        <Header
+          modalRegistry={this.state.modalRegistry}
+          setModal={this.setModal.bind(this)}
+        />
+        {this.renderModal()}
+        {/* {this.renderModal()} */}
+        {/* {this.renderMainPage()} */}
+      </div>
+    )
+  }
+
+  render() 
+  {
+    if (this.state.mobile)
+    {
+      return this.renderMobile();
+    }
+    else
+    {
+      return this.renderDesktop();
+    }
   }
 }
 

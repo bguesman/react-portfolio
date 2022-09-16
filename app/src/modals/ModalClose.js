@@ -7,8 +7,9 @@ import * as Logging from '../logging/Logging';
 import close_button from "./img/X.svg";
 
 function ModalClose(props) {
+  var closeType = props.mobile ? 'modal-close-mobile' : 'modal-close';
   return (
-    <div><span onClick={() => props.closeModal()}><img className='modal-close' src={close_button}></img></span></div>
+    <div><span onClick={() => props.closeModal()}><img className={closeType} src={close_button}></img></span></div>
   );
 }
 

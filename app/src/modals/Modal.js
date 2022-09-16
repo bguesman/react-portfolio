@@ -37,6 +37,12 @@ class Modal extends Component {
 
     const container = document.getElementsByClassName('modal-container')[0];
     container.addEventListener('scroll', this.onScroll.bind(this));
+
+    // Set a timeout to call on scroll after mounting so initial state
+    // of subtitle is set
+    setTimeout(() => {
+      this.onScroll(null);
+    }, 100);
   }
 
   componentWillUnmount() {
@@ -59,10 +65,11 @@ class Modal extends Component {
   }
 
   render() {
+    var textType = this.props.mobile ? "modal-text-mobile" : "modal-text";
     return (
       <div className="modal-container" style={{opacity: this.props.visible ? "1" : "0"}}>
-        <ModalClose closeModal={this.props.closeModal}/>
-        <div className="modal-text">
+        <ModalClose closeModal={this.props.closeModal} mobile={this.props.mobile}/>
+        <div className={textType}>
           <section>
             <article dangerouslySetInnerHTML={{__html: this.state.markdown}}></article>
           </section>
