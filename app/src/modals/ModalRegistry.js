@@ -34,7 +34,7 @@ class ModalRegistry {
         name: 'Modern Warfare',
         type: 'work',
         markdownPath: require('./markdown/work/mw.md'),
-        image: '/img/mw/farah.png',
+        image: '/img/mw/farah.jpeg',
         displayOnMobile: true
       },
       {

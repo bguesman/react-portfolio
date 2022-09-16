@@ -74,6 +74,8 @@ class Modal extends Component {
             <article dangerouslySetInnerHTML={{__html: this.state.markdown}}></article>
           </section>
         </div>
+        {/* add extra padding at bottom on mobile */}
+        {this.props.mobile ? <div style={{paddingBottom:"50px"}}></div> : ""}
       </div>
     );
   }

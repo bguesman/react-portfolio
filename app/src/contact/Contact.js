@@ -155,14 +155,14 @@ class Contact extends Component {
               <div 
                 className="center-text-float-up" 
                 style={{transform: translate, fontSize: mainFontSize, lineHeight: mainLineHeight}}
-                onClick={() => navigator.clipboard.writeText("brad.guesman@gmail.com")}
+                onClick={() => {window.location = "mailto:brad.guesman@gmail.com"}}
               >
                 brad.<wbr/>guesman@<wbr/>gmail.<wbr/>com
               </div>
             </div>
           </div>
           <div className="wrapped-text-overlay"></div>
-          <div className="wrapped-text" style={{opacity: opacity}}>{this.state.composed}</div>
+          <div className="wrapped-text" style={{opacity: opacity, fontWeight: "100", fontSize: "30px"}}>{this.state.composed}</div>
         </div>
       );
     }
