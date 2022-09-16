@@ -62,7 +62,7 @@ class LoadingScreen extends Component {
     const opacity = this.state.loading ? 1 : 0;
     return (
       <div className="loading-screen-container" ref={this.ref} style={{opacity: opacity}}>
-        <div className="loading-icon"><LoadingIcon/></div>
+        <div className="loading-icon" style={{width: this.props.mobile ? "25vh" : "45vh"}}><LoadingIcon/></div>
       </div>
     );
   }

@@ -232,7 +232,12 @@ iframe .empty {
   overflow: hidden;
 }
 
-#modal-subtitle {
+.modal-text #modal-subtitle {
   transform: translateY(120%);
+  transition: transform 1s;
+}
+
+.modal-text-mobile #modal-subtitle {
+  /* Default to visible on mobile */
   transition: transform 1s;
 }

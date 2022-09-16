@@ -9,9 +9,12 @@ class MobileProjects extends Component {
     return (
       <div className="mobile-projects-container">
         {this.props.modalRegistry.modals.map((modal, i) => {
-          return <div className='mobile-project-item'
+          if (!modal.displayOnMobile)
+            return "";
+          return <div className='mobile-project-item' key={i}
             onClick={() => {this.props.setModal(modal.name)}}>
-            {modal.name}
+            {/* {modal.name} */}
+            <img src={modal.image}/>
           </div>;
         })}
       </div>

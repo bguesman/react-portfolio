@@ -42,7 +42,7 @@ class Modal extends Component {
     // of subtitle is set
     setTimeout(() => {
       this.onScroll(null);
-    }, 100);
+    }, 200);
   }
 
   componentWillUnmount() {

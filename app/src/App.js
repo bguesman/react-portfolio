@@ -146,7 +146,7 @@ class App extends Component {
       <div className="App">
         <base target="_blank"/> { /* All links open in new tabs. */ }
         <Cursor display={this.state.cursorDisplay}/>
-        <LoadingScreen/>
+        <LoadingScreen mobile={false}/>
         {this.renderModal()}
         {this.renderMainPage()}
       </div>
@@ -158,7 +158,7 @@ class App extends Component {
     return (
       <div className="App">
         <base target="_blank"/> { /* All links open in new tabs. */ }
-        <LoadingScreen/>
+        <LoadingScreen mobile={true}/>
         <MobileHeader
           modalRegistry={this.state.modalRegistry}
           setModal={this.setModal.bind(this)}

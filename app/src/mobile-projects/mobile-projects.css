@@ -2,6 +2,13 @@
   width: fill;
   overflow: hidden;
 
+  /* Layout with vertical flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
   padding-top: 120px; /* display under banner */
 
   text-align: left;
@@ -10,12 +17,12 @@
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
+  
 }
 
 .mobile-project-item {
-  width: fill;
-  overflow: hidden;
-
+  max-width: 100%;
+  
   font-family: 'Amiri';
   font-style: italic;
   font-weight: 400;
@@ -25,4 +32,8 @@
   padding-bottom: 10px;
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.mobile-project-item img {
+  max-width:100%;
 }
