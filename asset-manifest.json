@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.e928331e.css",
-    "main.js": "./static/js/main.74c78b00.js",
+    "main.js": "./static/js/main.010ec3f8.js",
     "static/js/787.1ed0c42c.chunk.js": "./static/js/787.1ed0c42c.chunk.js",
     "static/media/drivesim-project-example.jpg": "./static/media/drivesim-project-example.a36134f81ba1bf9ef609.jpg",
     "static/media/snowcrash-project-example.jpg": "./static/media/snowcrash-project-example.3e6aad012ffc8afbc7d8.jpg",
@@ -36,11 +36,11 @@
     "static/media/arrow.svg": "./static/media/arrow.fec991df24c02f2364bb61144b18616e.svg",
     "static/media/production.md": "./static/media/production.f22fe024b8c697d9d19d.md",
     "main.e928331e.css.map": "./static/css/main.e928331e.css.map",
-    "main.74c78b00.js.map": "./static/js/main.74c78b00.js.map",
+    "main.010ec3f8.js.map": "./static/js/main.010ec3f8.js.map",
     "787.1ed0c42c.chunk.js.map": "./static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e928331e.css",
-    "static/js/main.74c78b00.js"
+    "static/js/main.010ec3f8.js"
   ]
 }
