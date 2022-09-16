@@ -135,7 +135,7 @@ class App extends Component {
           setCursorDisplay={this.setCursorDisplay.bind(this)}
         />
         <Contact setCursorDisplay={this.setCursorDisplay.bind(this)}/>
-        <Footer/>
+        <Footer mobile={false}/>
       </div>
     );
   }
@@ -143,7 +143,7 @@ class App extends Component {
   renderDesktop()
   {
     return (
-      <div className="App">
+      <div className="App" style={{cursor: "none"}}>
         <base target="_blank"/> { /* All links open in new tabs. */ }
         <Cursor display={this.state.cursorDisplay}/>
         <LoadingScreen mobile={false}/>
@@ -168,6 +168,8 @@ class App extends Component {
           modalRegistry={this.state.modalRegistry}
           setModal={this.setModal.bind(this)}
         />
+        <Contact setCursorDisplay={this.setCursorDisplay.bind(this)} mobile={true}/>
+        <Footer/>
       </div>
     )
   }

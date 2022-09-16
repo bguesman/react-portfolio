@@ -3,11 +3,6 @@ html, body {
   background-color: #fff;
 }
 
-/* Hide the default cursor. */
-* {
-  cursor: none;
-}
-
 .cursor {
   width:26px;
   height:26px;

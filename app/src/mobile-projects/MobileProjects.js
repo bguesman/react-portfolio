@@ -15,7 +15,7 @@ class MobileProjects extends Component {
             onClick={() => {this.props.setModal(modal.name)}}>
             {/* {modal.name} */}
             <img src={modal.image}/>
-          </div>;
+          </div>
         })}
       </div>
     );

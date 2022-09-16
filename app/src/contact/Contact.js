@@ -143,25 +143,51 @@ class Contact extends Component {
   render() {
     const translate = this.state.centerTextVisible ? "translateY(0%)" : "translateY(100%)";
     const opacity = this.state.backgroundTextVisible ? 1 : 0;
-    return (
-      <div className="contact-container" ref={this.ref}>
-        <div className="center-text-container">
-          <div className="center-text">
-            <div 
-              className="center-text-float-up" 
-              style={{transform: translate}}
-              onMouseEnter={() => this.props.setCursorDisplay("click-to-copy")}
-              onMouseLeave={() => this.props.setCursorDisplay("normal")}
-              onClick={() => navigator.clipboard.writeText("brad.guesman@gmail.com")}
-            >
-              brad.guesman<wbr/>@gmail.com
+    const mainFontSize = this.props.mobile ? "80px" : "160px";
+    const mainLineHeight = this.props.mobile ? "80px" : "200px";
+
+    if (this.props.mobile)
+    {
+      return (
+        <div className="contact-container" ref={this.ref}>
+          <div className="center-text-container">
+            <div className="center-text">
+              <div 
+                className="center-text-float-up" 
+                style={{transform: translate, fontSize: mainFontSize, lineHeight: mainLineHeight}}
+                onClick={() => navigator.clipboard.writeText("brad.guesman@gmail.com")}
+              >
+                brad.<wbr/>guesman@<wbr/>gmail.<wbr/>com
+              </div>
             </div>
           </div>
+          <div className="wrapped-text-overlay"></div>
+          <div className="wrapped-text" style={{opacity: opacity}}>{this.state.composed}</div>
         </div>
-        <div className="wrapped-text-overlay"></div>
-        <div className="wrapped-text" style={{opacity: opacity}}>{this.state.composed}</div>
-      </div>
-    );
+      );
+    }
+    else
+    {
+      return (
+        <div className="contact-container" ref={this.ref}>
+          <div className="center-text-container">
+            <div className="center-text">
+              <div 
+                className="center-text-float-up" 
+                style={{transform: translate, fontSize: mainFontSize, lineHeight: mainLineHeight}}
+                onMouseEnter={() => this.props.setCursorDisplay("click-to-copy")}
+                onMouseLeave={() => this.props.setCursorDisplay("normal")}
+                onClick={() => navigator.clipboard.writeText("brad.guesman@gmail.com")}
+              >
+                brad.guesman<wbr/>@gmail.com
+              </div>
+            </div>
+          </div>
+          <div className="wrapped-text-overlay"></div>
+          <div className="wrapped-text" style={{opacity: opacity}}>{this.state.composed}</div>
+        </div>
+      );
+    }
   }
 }
 
