@@ -21,6 +21,10 @@ import Footer from "./footer/Footer";
 import ModalRegistry from "./modals/ModalRegistry";
 import Modal from "./modals/Modal";
 
+// Mobile-specific components
+import MobileHeader from "./header/MobileHeader";
+import MobileProjects from "./mobile-projects/MobileProjects";
+
 // Three-js for fluid simulation.
 import * as THREE from "three";
 
@@ -156,13 +160,15 @@ class App extends Component {
         <base target="_blank"/> { /* All links open in new tabs. */ }
         <Cursor display={this.state.cursorDisplay}/>
         <LoadingScreen/>
-        <Header
+        <MobileHeader
           modalRegistry={this.state.modalRegistry}
           setModal={this.setModal.bind(this)}
         />
         {this.renderModal()}
-        {/* {this.renderModal()} */}
-        {/* {this.renderMainPage()} */}
+        <MobileProjects 
+          modalRegistry={this.state.modalRegistry}
+          setModal={this.setModal.bind(this)}
+        />
       </div>
     )
   }

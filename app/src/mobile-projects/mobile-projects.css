@@ -1,0 +1,27 @@
+.mobile-projects-container {
+  width: fill;
+  overflow: hidden;
+
+  padding-top: 120px; /* display under banner */
+
+  text-align: left;
+
+  /* No highlighting. */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.mobile-project-item {
+  width: fill;
+  overflow: hidden;
+
+  font-family: 'Amiri';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+}

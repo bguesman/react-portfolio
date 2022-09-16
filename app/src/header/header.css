@@ -23,3 +23,29 @@
   -webkit-user-select: none;
   -webkit-touch-callout: none;
 }
+
+.mobile-header-container {
+  /* Flex content---aligns internal items. */
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 20px;
+  align-items: stretch;
+
+  /* Global position: pins nav bar to the top, makes sure it
+   * always renders over things. */
+  position:fixed;
+  width: fill;
+  z-index: 200;
+  
+  /* Background is solid white. */
+  background-color: #ffffff;
+
+  /* For sliding up and down. */
+  transition: top 0.25s;
+
+  /* no highlighting */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
