@@ -158,7 +158,6 @@ class App extends Component {
     return (
       <div className="App">
         <base target="_blank"/> { /* All links open in new tabs. */ }
-        <Cursor display={this.state.cursorDisplay}/>
         <LoadingScreen/>
         <MobileHeader
           modalRegistry={this.state.modalRegistry}
