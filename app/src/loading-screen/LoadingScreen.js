@@ -11,7 +11,7 @@ class LoadingScreen extends Component {
   constructor(props) {
     super(props);
     
-    this.secsDuration = 4;
+    this.secsDuration = 1;
 
     this.state = {
       loading: true,

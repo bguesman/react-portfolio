@@ -22,6 +22,7 @@ class Footer extends Component {
     this.spotifyLink = "https://open.spotify.com/artist/073z2iituqcfggtHLgTB7Q";
     this.youtubeLink = "https://www.youtube.com/channel/UCHBzoaGEDkI2P2jsUljq24Q/featured";
     this.linkedinLink = "https://www.linkedin.com/in/brad-guesman-871019110/";
+    this.resumeLink = "resume.pdf";
     this.githubLink = "https://github.com/bguesman";
   }
 
@@ -69,7 +70,7 @@ class Footer extends Component {
           </span>
         </div>
         <div className="footer-item">
-          <span className="underline-on-hover">RESUME</span>
+          <span className="underline-on-hover" onClick={() => window.open(this.resumeLink, '_blank')}>RESUME</span>
         </div>
       </div>
     );
