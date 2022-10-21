@@ -36,6 +36,27 @@
   flex: 1;
 }
 
-.about-image {
+/* This is jank af and there has to be a better way to position an image 
+ * overlay */
+.about-image img {
+  position: relative;
   width: 80%;
+}
+
+.about-image-below {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50.5%);
+}
+
+.about-image-overlay {
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
 }

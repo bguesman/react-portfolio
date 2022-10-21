@@ -4,38 +4,51 @@ import './about.css';
 
 import * as Logging from '../logging/Logging';
 
+function saturate(x)
+{
+  return Math.min(Math.max(0, x), 1);
+}
+
 class About extends Component {
 
   constructor(props) {
     super(props);
-    // this.state = {
-    //   visible: false
-    // }
+    this.state = {
+      opacity: 0,  // Range 0-1
+      mouseDown: false,
+      prevMouseX: null,
+      prevMouseY: null
+    }
   }
 
-  componentDidMount() {
-    // This adds an event listener to slide in the rolodex from the left
-    // when it scrolls into view.
-    // window.addEventListener('scroll', this.onScroll.bind(this));
+  handleMouseDown(event)
+  {
+    this.setState({
+      mouseDown: true,
+      prevMouseX: event.clientX,
+      prevMouseY: event.clientY
+    });
   }
 
-  componentWillUnmount() {
-    // window.removeEventListener('scroll', this.onScroll.bind(this));
+  handleMouseMove(event) {
+    if (this.state.mouseDown)
+    {
+      var diff = this.state.prevMouseY - event.clientY;
+      this.setState({
+        opacity: saturate(this.state.opacity + diff * 0.005),
+        prevMouseX: event.clientX,
+        prevMouseY: event.clientY
+      })
+    }
   }
 
-  onScroll(event) {
-    // if (document.getElementsByClassName("about-container").length == 0)
-    //   return;
-      
-    // const aboutY = document.getElementsByClassName("about-container")[0].getBoundingClientRect().top;
-    // // Early out in case DOM call fails for some reason
-    // if (!aboutY)
-    //   return;
-
-    // this.setState({
-    //   visible: (window.scrollY > (aboutY + 50))
-    // });
+  handleMouseUp(event)
+  {
+    this.setState({
+      mouseDown: false,
+    });
   }
+
 
   render() {
     return (
@@ -43,8 +56,23 @@ class About extends Component {
         className="about-image-container"
         onMouseEnter={this.props.onMouseEnter}
         onMouseLeave={this.props.onMouseLeave}
+        onDragStart={(event)=> event.preventDefault()}
       >
-          <img className="about-image" src={this.props.image2}/>
+        <div className="about-image">
+          <img 
+            className="about-image-below" 
+            src={this.props.image1}
+          />
+          <img 
+            draggable="true"
+            className="about-image-overlay" 
+            src={this.props.image2}
+            style={{opacity: this.state.opacity}}
+            onMouseDown={this.handleMouseDown.bind(this)}
+            onMouseMove={this.handleMouseMove.bind(this)}
+            onMouseUp={this.handleMouseUp.bind(this)}
+          />
+        </div>
       </div>
     );
   }
