@@ -45,7 +45,7 @@ class ProjectEx extends Component {
       <div className="align-to-bottom-container">
         <div className="align-to-bottom" 
           onClick={() => {this.props.openModal(); this.props.setCursorDisplay('normal');}} 
-          onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
+          onMouseEnter={() => this.props.setCursorDisplay('display-text', 'click for more')}
           onMouseLeave={() => this.props.setCursorDisplay('normal')}>
           <ProjectExLabel
             color={color}
@@ -77,7 +77,7 @@ class ProjectEx extends Component {
             <img 
               className="project-example-image" 
               onClick={() => {this.props.openModal(); this.props.setCursorDisplay('normal');}}
-              onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
+              onMouseEnter={() => this.props.setCursorDisplay('display-text', 'click for more')}
               onMouseLeave={() => this.props.setCursorDisplay('normal')}
               src={this.props.img}
             />
@@ -94,7 +94,7 @@ class ProjectEx extends Component {
             <img 
               className="project-example-image" 
               onClick={() => {this.props.openModal(); this.props.setCursorDisplay('normal');}}
-              onMouseEnter={() => this.props.setCursorDisplay('click-for-more')}
+              onMouseEnter={() => this.props.setCursorDisplay('display-text', 'click for more')}
               onMouseLeave={() => this.props.setCursorDisplay('normal')}
               src={this.props.img}
             />

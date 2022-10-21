@@ -52,9 +52,9 @@ class Cursor extends Component {
 
   render() {
     if (this.state.visible) {
-      const containsText = this.props.display === "click-to-copy" || this.props.display === "click-for-more";
+      const containsText = this.props.display === "click-to-copy" || this.props.display === "display-text";
       if (containsText) {
-        const displayText = this.props.display === "click-to-copy" ? (this.state.copied ? "address copied!" : "click to copy") : "click for more";
+        const displayText = this.props.display === "click-to-copy" ? (this.state.copied ? "address copied!" : "click to copy") : this.props.text;
         return (
           <div 
             className='cursor' 
@@ -69,7 +69,7 @@ class Cursor extends Component {
             <div>
                 {/* the only way to center the text without fucking up the transition
                   wrapper is to have a div padding space above it */}
-                <div style={{paddingTop: "7px", paddingRight: "1px"}}></div>
+                <div style={{paddingTop: "8px", paddingRight: "3px"}}></div>
                 <TextTransition
                   className="cursor-text" 
                   springConfig={{mass: 0.75, tension: 120, friction: 15}}

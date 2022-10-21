@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom/client';
 import './about.css';
+import faceImage from './img/focus-face.jpg';
+import guitarImage from './img/focus-guitar.jpg';
 
 import * as Logging from '../logging/Logging';
 
 import Rolodex from "./Rolodex";
+import ImageSwipe from "./ImageSwipe";
 
 class About extends Component {
 
@@ -58,9 +61,12 @@ class About extends Component {
           translateStyle={"translate(" + (this.state.visible ? "0%" : "-120%") + ")"}
           interval={2}
         />
-        <div className="about-image-container">
-          <img className="about-image" src="https://i.pinimg.com/originals/d7/e9/d7/d7e9d70cee41119a5d45121a8a999df9.png"/>
-        </div>
+        <ImageSwipe 
+          image1={faceImage}
+          image2={guitarImage}
+          onMouseEnter={() => this.props.setCursorDisplay('display-text', 'drag me around')}
+          onMouseLeave={() => this.props.setCursorDisplay('normal')}
+        />
       </div>
     );
   }

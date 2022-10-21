@@ -43,13 +43,15 @@ class App extends Component {
       displayModal: false,
       modalLoaded: false,
       mobile: window.innerWidth < 640,
-      cursorDisplay: "normal" // one of [normal, click-for-more, click-to-copy]
+      cursorDisplay: "normal", // one of [normal, display-text, click-to-copy]
+      cursorText: ""
     }
   }
 
-  setCursorDisplay(display) {
+  setCursorDisplay(display, text="") {
     this.setState({
-      cursorDisplay: display
+      cursorDisplay: display,
+      cursorText: text
     });
   }
 
@@ -128,7 +130,7 @@ class App extends Component {
         />
         <FluidOverlay/>
         {(this.state.modalLoaded ? "" : <ThreeCanvas simulate={!this.state.renderModal}/>)}
-        <About/>
+        <About setCursorDisplay={this.setCursorDisplay.bind(this)}/>
         <ProjectExamples
           modalRegistry={this.state.modalRegistry}
           setModal={this.setModal.bind(this)}
@@ -145,7 +147,7 @@ class App extends Component {
     return (
       <div className="App" style={{cursor: "none"}}>
         <base target="_blank"/> { /* All links open in new tabs. */ }
-        <Cursor display={this.state.cursorDisplay}/>
+        <Cursor display={this.state.cursorDisplay} text={this.state.cursorText}/>
         <LoadingScreen mobile={false}/>
         {this.renderModal()}
         {this.renderMainPage()}
