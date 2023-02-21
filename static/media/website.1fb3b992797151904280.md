@@ -6,6 +6,8 @@
 
 <div id="modal-subtitle-container"><h2 id="modal-subtitle">How do you make something fun and informative at the same time?</h2></div>
 
+**Update 2023:** This site has been featured in [DesignRush's Best Website Designs of 2023](https://www.designrush.com/best-designs/websites), and has won an [AWWWARDS honorable mention](https://www.awwwards.com/sites/brad-guesman-portfolio-1).
+
 Somewhere around mid-2021, in the thick of managing Expanse support requests and giving 3D artists advice on making beautiful skies, I started to think of myself less as a developer and more as a product designer. Maybe this was wishful thinking more than anything else, but that kernel of a feeling gradually changed the way I relate to software. Hence the title of this site, Brad Guesman: _Creative Technologist_.
 
 Ruminating about the job search, coming off a round of Tech Art interviews that turned into (almost successful) conversations about acquiring Expanse, I resolved to put together a portfolio page that reflects the creative nature of the work I enjoy.
